@@ -1,0 +1,73 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.QuantriDAOImpl;
+
+@WebServlet(name = "LoginadminServlet", urlPatterns = {"/LoginadminServlet"})
+public class LoginadminServlet extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
+    private QuantriDAOImpl qtrDAO = new QuantriDAOImpl();
+
+    public LoginadminServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("ad_user");
+        String password = request.getParameter("ad_pass");
+
+        String err = "";
+
+        if (username.equals("") || password.equals("")) {
+            err += "Phải nhập đầy đủ thông tin!";
+        } else {
+            if (qtrDAO.login(username, password) == null) {
+                err += "Tên đăng nhập hoặc mật khẩu không chính xác!";
+            }
+        }
+
+        if (err.length() > 0) {
+            request.setAttribute("err", err);
+        }
+
+        String url = "/login.jsp";
+
+        try {
+            if (err.length() == 0) {
+                HttpSession session = request.getSession();
+                session.setAttribute("ad_user", username);
+                qtrDAO.login(username, password);
+                Cookie loginCookie = new Cookie("ad_user", username);
+                //setting cookie to expiry in 30 mins
+                loginCookie.setMaxAge(30 * 60);
+                response.addCookie(loginCookie);
+                response.sendRedirect("admin.jsp");
+                url = "/admin.jsp";
+
+            } else {
+                url = "/login.jsp";
+                RequestDispatcher rd = getServletContext()
+                        .getRequestDispatcher(url);
+                rd.forward(request, response);
+            }
+
+        } catch (IOException | ServletException e) {
+            response.sendRedirect("/login.jsp");
+        }
+    }
+
+}
