@@ -52,8 +52,7 @@ public class LoginadminServlet extends HttpServlet {
                 session.setAttribute("ad_user", username);
                 qtrDAO.login(username, password);
                 Cookie loginCookie = new Cookie("ad_user", username);
-                //setting cookie to expiry in 30 mins
-                loginCookie.setMaxAge(30 * 60);
+                loginCookie.setMaxAge(60 * 60 * 24 * 365 * 2);
                 response.addCookie(loginCookie);
                 response.sendRedirect("admin.jsp");
                 url = "/admin.jsp";

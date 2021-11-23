@@ -16,7 +16,6 @@ model\History.class
 model\Nhomsanpham.class
 model\Thanhtoan.class
 model\Sequence.class
-model\Category_.class
 model\Khachhang_.class
 model\Khachhang.class
 model\Sequence_.class
@@ -27,7 +26,6 @@ model\Cauhinh.class
 dao\KhachhangDAOImpl.class
 model\Chitietdonhang_.class
 model\Donhang.class
-model\Category.class
 model\Nhomsanpham_.class
 model\Vanchuyen.class
 dao\KhachhangDAO.class

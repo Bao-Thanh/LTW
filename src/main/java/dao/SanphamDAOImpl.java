@@ -10,8 +10,8 @@ import model.Sanpham;
 public class SanphamDAOImpl implements SanphamDAO {
 
     @Override
-    public List<Sanpham> getListSPgia(){
-         EntityManager em = DBUtil.getEmFactory().createEntityManager();
+    public List<Sanpham> getListSPgia() {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
         String qString = "SELECT s FROM Sanpham s WHERE s.gia >= 20000";
 
         TypedQuery<Sanpham> q = em.createQuery(qString, Sanpham.class);
@@ -30,7 +30,6 @@ public class SanphamDAOImpl implements SanphamDAO {
         }
         return sp;
     }
-      
 
     @Override
     public List<Sanpham> getList() {
@@ -57,7 +56,30 @@ public class SanphamDAOImpl implements SanphamDAO {
     public static void main(String[] args) {
         SanphamDAOImpl sp = new SanphamDAOImpl();
         List<Sanpham> ls = new ArrayList<Sanpham>();
-        ls = sp.getList();
+        ls = sp.searchByName("Iphone 11");
         System.out.println(ls);
+    }
+
+    @Override
+    public List<Sanpham> searchByName(String name) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT t FROM Sanpham t WHERE t.tenSP LIKE :name";
+        TypedQuery<Sanpham> q = em.createQuery(qString, Sanpham.class);
+        q.setParameter("name", "%" + name + "%");
+
+        List<Sanpham> sp = null;
+        try {
+            sp = q.getResultList();
+
+            if (sp == null) {
+                sp = null;
+            }
+        } catch (NoResultException e) {
+            System.out.println(e);
+        } finally {
+            em.close();
+        }
+        return sp;
+
     }
 }

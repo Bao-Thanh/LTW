@@ -91,8 +91,7 @@ public class SignupServlet extends HttpServlet {
                 khDAO.addKH(new Khachhang(tenkh,username,password,diachi,sdt,email));
                 khDAO.login(username, password);
                 Cookie loginCookie = new Cookie("username", username);
-                //setting cookie to expiry in 30 mins
-                loginCookie.setMaxAge(30 * 60);
+                loginCookie.setMaxAge(60 * 60 * 24 * 365 * 2);
                 response.addCookie(loginCookie);
                 response.sendRedirect("index.jsp");
 

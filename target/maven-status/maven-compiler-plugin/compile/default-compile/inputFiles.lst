@@ -1,11 +1,12 @@
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\SanphamServlet.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Nhacungcap.java
+C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\QuangcaoDAO.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Thanhtoan.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Sequence.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Khachhang.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Quangcao.java
+C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\KhachhangServlet.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\ResetPassword.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Category.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\SanphamDAO.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Donhang.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\SignupServlet.java
@@ -18,6 +19,7 @@ C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\K
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\QuantriDAOImpl.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\LoginServlet.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Uathich.java
+C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\QuangcaoDAOImpl.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Quantri.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\SanphamDAOImpl.java
 C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Nhomsanpham.java

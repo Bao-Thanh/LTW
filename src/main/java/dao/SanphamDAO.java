@@ -10,5 +10,7 @@ public interface SanphamDAO {
 
     // hiển thị danh sách sản phẩm
     public List<Sanpham> getList();
+    
+    public List<Sanpham> searchByName(String name);
 
 }

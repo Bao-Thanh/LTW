@@ -49,9 +49,10 @@ and open the template in the editor.
                             <% String mess = "";
                                 if (request.getAttribute("mess") != null) {
                                     mess = (String) request.getAttribute("mess");%>
-                            <li style="color: red"><%=mess%></li>	
-                                <% }%>
+                            <li style="color: red"><%=mess%></li> 
+                                <% }%>	
                             <li style="color: red"><%=err%></li>
+
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>

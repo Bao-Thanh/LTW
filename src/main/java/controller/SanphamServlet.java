@@ -24,8 +24,4 @@ public class SanphamServlet extends HttpServlet {
         request.getRequestDispatcher("index.jsp").forward(request, response);
 
     }
-        public static void main(String[] args) {
-
-    }
-
 }

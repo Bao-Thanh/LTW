@@ -4,28 +4,7 @@
 <!DOCTYPE html>
 <html lang = "vi">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ustora Demo</title>
-
-        <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+       <jsp:include page="head.jsp" flush="true"></jsp:include>
     </head>
     <body>
         <header>
@@ -33,58 +12,88 @@
             </header>
 
         <%
-            String username = null;
-            Cookie[] cookies = request.getCookies();
-            if (cookies != null) {
-                for (Cookie cookie : cookies) {
-                    if (cookie.getName().equals("username")) {
-                        username = cookie.getValue();
-                    }
-                }
+            String err = "";
+            if (request.getAttribute("err") != null) {
+                err = (String) request.getAttribute("err");
             }
-            if (username != null) {
-
-                KhachhangDAOImpl dao = new KhachhangDAOImpl();
-                Khachhang khachhang = dao.getKH(username);
-
-                request.setAttribute("kh", khachhang);
-            }
+            String username = request.getParameter("username");
+            KhachhangDAOImpl khDAO = new KhachhangDAOImpl();
+            Khachhang khachhang = khDAO.getKH(username);
+            request.setAttribute("kh", khachhang);
         %>
-        <form>
-            <label>Tên bạn</label>
-            <input type="text" value="${kh.tenKH}">
-            <label>Tài khoản</label>
-            <input type="text"  value="${kh.tenTK}">
-            <label >Mật khẩu</label>
-            <input type="password" value="${kh.matKhau}">
-            <label>Địa chỉ</label>
-            <input type="text" value="${kh.diaChi}">
-            <label>Số điện thoại</label>
-            <input type="text"  value="${kh.sdt}">
-            <label>Email</label>
-            <input type="email"  value="${kh.email}">
-            <button type="submit" class="btn btn-primary">Lưu lại</button>
-        </form>
 
-        <jsp:include page="footer.jsp" flush="true"></jsp:include>
-        <!-- Latest jQuery form server -->
-        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <form action="KhachhangServlet" method="POST">                      
+                            <li style="color: red"><%=err%></li>
+                            <label class="" for="tenKH">Tên của bạn: <abbr title="required" class="required">*</abbr>
+                            </label>
+                            <input type="text" value="${kh.tenKH}" id="tenKH" name="tenKH" class="form-control">
+                            </div>
 
-        <!-- Bootstrap JS form CDN -->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                            <div class="form-group">
+                                <label class="" for="tenTK">Tài khoản: <abbr title="required" class="required">*</abbr>
+                                </label>
+                                <input type="text" value="${kh.tenTK}" id="tenTK" name="tenTK" class="form-control">
+                            </div>
 
-        <!-- jQuery sticky menu -->
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
+                            <div class="form-group">
+                                <label class="" for="matKhau">Mật khẩu: <abbr title="required" class="required">*</abbr>
+                                </label>
+                                <input type="password" value="${kh.matKhau}" id="matKhau" name="matKhau" class="form-control">
+                            </div>
 
-        <!-- jQuery easing -->
-        <script src="js/jquery.easing.1.3.min.js"></script>
+                            <div class="form-group">                     
+                                <label class="" for="diaChi">Địa chỉ: <abbr title="required" class="required">*</abbr>
+                                </label>
+                                <input type="text" value="${kh.diaChi}" id="diaChi" name="diaChi" class="form-control">
+                            </div>   
 
-        <!-- Main Script -->
-        <script src="js/main.js"></script>
+                            <div class="form-group">
+                                <label class="" for="sdt">Số điện thoại: <abbr title="required" class="required">*</abbr>
+                                </label>
+                                <input type="text" value="${kh.sdt}" id="sdt" name="sdt" class="form-control">
+                            </div>
 
-        <!-- Slider -->
-        <script type="text/javascript" src="js/bxslider.min.js"></script>
-        <script type="text/javascript" src="js/script.slider.js"></script>
+                            <div class="form-group">                       
+                                <label class="" for="email">Email: <abbr title="required" class="required">*</abbr>
+                                </label>
+                                <input type="email" value="${kh.email}" id="email" name="email" class="form-control">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Lưu lại</button>      
+                        </form>                     
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p>
+
+                </p>
+            </div>
+
+            <jsp:include page="footer.jsp" flush="true"></jsp:include>
+            <!-- Latest jQuery form server -->
+            <script src="https://code.jquery.com/jquery.min.js"></script>
+
+            <!-- Bootstrap JS form CDN -->
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+            <!-- jQuery sticky menu -->
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.sticky.js"></script>
+
+            <!-- jQuery easing -->
+            <script src="js/jquery.easing.1.3.min.js"></script>
+
+            <!-- Main Script -->
+            <script src="js/main.js"></script>
+
+            <!-- Slider -->
+            <script type="text/javascript" src="js/bxslider.min.js"></script>
+            <script type="text/javascript" src="js/script.slider.js"></script>
     </body>
 </html>
