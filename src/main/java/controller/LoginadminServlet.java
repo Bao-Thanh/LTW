@@ -54,8 +54,8 @@ public class LoginadminServlet extends HttpServlet {
                 Cookie loginCookie = new Cookie("ad_user", username);
                 loginCookie.setMaxAge(60 * 60 * 24 * 365 * 2);
                 response.addCookie(loginCookie);
-                response.sendRedirect("admin.jsp");
-                url = "/admin.jsp";
+                response.sendRedirect("admin/dashboard.jsp");
+                url = "/admin/dashboard.jsp";
 
             } else {
                 url = "/login.jsp";

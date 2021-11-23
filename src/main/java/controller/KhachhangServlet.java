@@ -73,7 +73,7 @@ public class KhachhangServlet extends HttpServlet {
 
         try {
             if (err.length() == 0) {
-                Khachhang u = new Khachhang(tenKH, tenTK, matKhau, diaChi, email, sdt);
+                Khachhang u = new Khachhang(tenKH, tenTK, matKhau, diaChi, sdt, email);
                 khDAO.updateKH(u);
                 url = "/index.jsp";
             } else {

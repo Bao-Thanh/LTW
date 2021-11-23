@@ -71,7 +71,6 @@ public class KhachhangDAOImpl implements KhachhangDAO {
         } finally {
             em.close();
         }
-
     }
     
 
