@@ -6,7 +6,33 @@
 <!DOCTYPE html>
 <html lang="vi">
     <head>
-       <jsp:include page="head.jsp" flush="true"></jsp:include>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Shop Page - Nhóm 9 Shop</title>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
 
@@ -27,27 +53,22 @@
             </div>
 
 
-        <%
-            SanphamDAOImpl dao = new SanphamDAOImpl();
-            List<Sanpham> sanpham = dao.getList();
-
-            request.setAttribute("sanpham", sanpham);
-        %>
+   
 
         <div class="single-product-area">
             <div class="zigzag-bottom"></div>
             <div class="container">
                 <div class="row">
                     <h2 class="section-title">Danh sách sản phẩm</h2>
-                    <c:forEach items="${sanpham}" var="sp" >
+                    <c:forEach items="${listsp}" var="o" >
                         <div class="col-md-3 col-sm-6">
                             <div class="single-shop-product">
                                 <div class="product-upper">
-                                    <img src="${sp.anh}" alt="">
+                                    <img src="${o.anh}" alt="">
                                 </div>
-                                <h2><a href="">${sp.tenSP}</a></h2>
+                                <h2><a href="singleproduct?maSP=${o.maSP}">${o.tenSP}</a></h2>
                                 <div class="product-carousel-price">
-                                    <ins>$${sp.gia}</ins> <del>$999.00</del>
+                                    <ins>$${o.gia}</ins> <del></del>
                                 </div>  
 
                                 <div class="product-option-shop">

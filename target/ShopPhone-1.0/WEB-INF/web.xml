@@ -10,12 +10,28 @@
         <servlet-name>taikhoan</servlet-name>
         <servlet-class>model.TaiKhoan</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SingleproductServlet</servlet-name>
+        <servlet-class>controller.SingleproductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SanphamServlet</servlet-name>
+        <servlet-class>controller.SanphamServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShopServlet</servlet-name>
+        <servlet-class>controller.ShopServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>controller.SearchServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>taikhoan</servlet-name>
         <url-pattern>/taikhoan</url-pattern>
     </servlet-mapping>
     <servlet>
-        <description></description>
+        <description/>
         <display-name>LoginServlet</display-name>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginServlet</servlet-class>
@@ -23,6 +39,22 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SingleproductServlet</servlet-name>
+        <url-pattern>/singleproduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SanphamServlet</servlet-name>
+        <url-pattern>/SanphamServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShopServlet</servlet-name>
+        <url-pattern>/ShopServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

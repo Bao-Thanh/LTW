@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import model.Donhang;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-23T17:27:56")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-23T23:53:20")
 @StaticMetamodel(Vanchuyen.class)
 public class Vanchuyen_ { 
 

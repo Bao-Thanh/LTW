@@ -107,9 +107,9 @@
             </div> 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.jsp">Home</a></li>
-                    <li><a href="shop.jsp">Shop page</a></li>
-                    <!--                    <li><a href="single-product.jsp">Single product</a></li>-->
+                    <li><a href="SanphamServlet">Home</a></li>
+                    <li><a href="ShopServlet">Shop page</a></li>
+                    <li><a href="single-product.jsp">Single product</a></li>
                     <li><a href="cart.jsp">Cart</a></li>
                     <li><a href="checkout.jsp">Checkout</a></li>
                     <li><a href="#">Category</a></li>

@@ -1,5 +1,3 @@
-<%@page import="model.Vanchuyen"%>
-<%@page import="dao.VanchuyenDAOImpl"%>
 <%@page import="model.Quangcao"%>
 <%@page import="dao.QuangcaoDAOImpl"%>
 <%@page import="java.util.List"%>
@@ -10,34 +8,61 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <jsp:include page="head.jsp" flush="true"></jsp:include>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Nhóm 9 Shop</title>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
         <header>
             <jsp:include page="header.jsp" flush="true"></jsp:include>
             </header>
-
-        <%
+        <%--
             QuangcaoDAOImpl qcdao = new QuangcaoDAOImpl();
             List<Quangcao> quangcao = qcdao.getList();
             request.setAttribute("quangcao", quangcao);
-        %>
+        --%>
         <div class="slider-area">
             <!-- Slider -->
             <div class="block-slider block-slider4">
                 <ul class="" id="bxslider-home4">
                     <c:forEach items="${quangcao}" var="qc" >
                         <li>
-                            <img src="img/h4-slide.png" alt="Slide">
+                            <img src="${qc.anh}" alt="">
                             <div class="caption-group">
-                                <h2 class="caption title">
+                                <%-- <h2 class="caption title">
                                     <span class="primary"> <strong>${qc.tenQC}</strong></span>
-                                </h2>                
+                                </h2>  --%>              
                                 <c:set var="promotion" scope="session" value="${(qc.gia - 0.5*qc.gia)}"/>
-                                <h4 class="caption subtitle">Giá sốc: ${promotion}
+                                <%--<h4 class="caption subtitle">Giá sốc: ${qc.gia - 10}
                                     <del>${qc.gia}</del>
-                                </h4>
-                                <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                                </h4>--%>
+                                <a class="caption button-radius" href="ShopServlet"><span class="icon"></span>Shop now</a>
                             </div>
                         </li>
                     </c:forEach>
@@ -78,11 +103,12 @@
             </div>
         </div> <!-- End promo area -->
 
-        <%
-            SanphamDAOImpl spdao = new SanphamDAOImpl();
-            List<Sanpham> sanpham = spdao.getListSPgia();
+        <%--
+            SanphamDAOImpl dao = new SanphamDAOImpl();
+            List<Sanpham> sanpham = dao.getListSPgia();
+
             request.setAttribute("sanpham", sanpham);
-        %>
+        --%> 
 
         <div class="maincontent-area">
             <div class="zigzag-bottom"></div>
@@ -98,14 +124,14 @@
                                             <img src="${sp.anh}" alt="">
                                             <div class="product-hover">
                                                 <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                                <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                                <a href="singleproduct?maSP=${sp.maSP}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                             </div>
                                         </div>
 
-                                        <h2><a href="single-product.html">${sp.tenSP}</a></h2>
+                                        <h2><a href="singleproduct?maSP=${sp.maSP}">${sp.tenSP}</a></h2>
 
                                         <div class="product-carousel-price">
-                                            <ins>$${sp.gia}</ins> <del>$100.00</del>
+                                            <ins>$${sp.gia}</ins> <del></del>
                                         </div> 
                                     </div>
                                 </c:forEach>
@@ -291,159 +317,24 @@
         </div> <!-- End product widget area -->
         <jsp:include page="footer.jsp" flush="true"></jsp:include>
 
-            <!-- Latest jQuery form server -->
-            <script src="https://code.jquery.com/jquery.min.js"></script>
+        <!-- Latest jQuery form server -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
 
-            <!-- Bootstrap JS form CDN -->
-            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS form CDN -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-            <!-- jQuery sticky menu -->
-            <script src="js/owl.carousel.min.js"></script>
-            <script src="js/jquery.sticky.js"></script>
+        <!-- jQuery sticky menu -->
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
 
-            <!-- jQuery easing -->
-            <script src="js/jquery.easing.1.3.min.js"></script>
+        <!-- jQuery easing -->
+        <script src="js/jquery.easing.1.3.min.js"></script>
 
-            <!-- Main Script -->
-            <script src="js/main.js"></script>
+        <!-- Main Script -->
+        <script src="js/main.js"></script>
 
-            <!-- Slider -->
-            <script type="text/javascript" src="js/bxslider.min.js"></script>
-            <script type="text/javascript" src="js/script.slider.js"></script>
-        </body>
-    </html>
-
-
-<%
-    VanchuyenDAOImpl vchdao = new VanchuyenDAOImpl();
-    List<Vanchuyen> vanchuyen = vchdao.getList();
-    request.setAttribute("vanchuyen", vanchuyen);
-%>
-<!-- Modal -->
-<div class="modal fade" id="vanchuyen" tabindex="-1" aria-labelledby="#vanchuyen" aria-hidden="true" class="modal-dialog modal-lg">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="vanchuyen">Các loại hình vận chuyển</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body"> 
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Hãng vận chuyển</th>
-                            <th scope="col">Giá</th>
-                            <th scope="col">Mô tả</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${vanchuyen}" var="vch" >
-                            <tr>
-                                <td>${vch.tenVC}</td>
-                                <td>${vch.gia}</td>
-                                <td>${vch.moTa}</td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="return" tabindex="-1" aria-labelledby="#return" aria-hidden="true" class="modal-dialog modal-lg">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="return">Chính sách đổi trả</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body"> 
-                ........
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="pay" tabindex="-1" aria-labelledby="#pay" aria-hidden="true" class="modal-dialog modal-lg">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="pay">An toàn khi mua sắm</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body"> 
-                ........
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="new" tabindex="-1" aria-labelledby="#new" aria-hidden="true" class="modal-dialog modal-lg">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="new">Các sản phẩm mới</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body"> 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+        <!-- Slider -->
+        <script type="text/javascript" src="js/bxslider.min.js"></script>
+        <script type="text/javascript" src="js/script.slider.js"></script>
+    </body>
+</html>

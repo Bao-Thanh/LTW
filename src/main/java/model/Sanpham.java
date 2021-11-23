@@ -37,7 +37,9 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Sanpham.findByAnh", query = "SELECT s FROM Sanpham s WHERE s.anh = :anh"),
     @NamedQuery(name = "Sanpham.findByGia", query = "SELECT s FROM Sanpham s WHERE s.gia = :gia"),
     @NamedQuery(name = "Sanpham.findByMoTa", query = "SELECT s FROM Sanpham s WHERE s.moTa = :moTa"),
-    @NamedQuery(name = "Sanpham.findByTrangThai", query = "SELECT s FROM Sanpham s WHERE s.trangThai = :trangThai")})
+    @NamedQuery(name = "Sanpham.findByTrangThai", query = "SELECT s FROM Sanpham s WHERE s.trangThai = :trangThai"),
+    @NamedQuery(name = "Sanpham.findByThuongHieu", query = "SELECT s FROM Sanpham s WHERE s.thuongHieu = :thuongHieu")
+})
 public class Sanpham implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -82,6 +84,9 @@ public class Sanpham implements Serializable {
     @OneToMany(mappedBy = "maSP")
     private Collection<Uathich> uathichCollection;
 
+    @Size(max = 500)
+    @Column(name = "ThuongHieu")
+    private String thuongHieu;
     public Sanpham() {
     }
 
@@ -129,6 +134,15 @@ public class Sanpham implements Serializable {
         this.moTa = moTa;
     }
 
+    public String getThuongHieu() {
+        return thuongHieu;
+    }
+
+    public void setThuongHieu(String thuongHieu) {
+        this.thuongHieu = thuongHieu;
+    }
+    
+    
     public Boolean getTrangThai() {
         return trangThai;
     }
@@ -207,7 +221,8 @@ public class Sanpham implements Serializable {
 
     @Override
     public String toString() {
-        return "Sanpham{" + "maSP=" + maSP + ", tenSP=" + tenSP + ", anh=" + anh + ", gia=" + gia + ", mota=" + moTa + ", trangthai=" + trangThai;
+        return "Sanpham{" + "maSP=" + maSP + ", tenSP=" + tenSP + ", anh=" + anh + ", gia=" + gia + ", mota=" + moTa + ", trangthai=" + trangThai
+                +"ThuongHieu" + thuongHieu;
     }
     
 }

@@ -30,5 +30,11 @@ public class QuangcaoDAOImpl implements QuangcaoDAO {
         }
         return qc;
     }
-
+    
+    public static void main(String[] args) {
+        QuangcaoDAOImpl dao =  new QuangcaoDAOImpl();
+        List<Quangcao> sp =  dao.getList();
+        
+        System.out.println(sp);
+    }
 }
