@@ -13,7 +13,10 @@ import javax.servlet.http.HttpSession;
 
 import dao.KhachhangDAOImpl;
 
-
+/**
+ *
+ * @author BaoThanh
+ */
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 

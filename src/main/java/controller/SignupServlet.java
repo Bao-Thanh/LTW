@@ -18,9 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Khachhang;
 import dao.KhachhangDAOImpl;
+
 /**
  *
- * @author admin
+ * @author BaoThanh
  */
 @WebServlet(name = "SignupServlet", urlPatterns = {"/SignupServlet"})
 public class SignupServlet extends HttpServlet {

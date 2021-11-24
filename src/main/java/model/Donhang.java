@@ -69,6 +69,8 @@ public class Donhang implements Serializable {
     private Date ngayMua;
     @Column(name = "TrangThai")
     private Boolean trangThai;
+    @OneToMany(mappedBy = "maDH")
+    private Collection<Chitietdonhang> chitietdonhangCollection;
     @JoinColumn(name = "MaKH", referencedColumnName = "MaKH")
     @ManyToOne
     private Khachhang maKH;
@@ -78,8 +80,6 @@ public class Donhang implements Serializable {
     @JoinColumn(name = "MaVC", referencedColumnName = "MaVC")
     @ManyToOne
     private Vanchuyen maVC;
-    @OneToMany(mappedBy = "maDH")
-    private Collection<Chitietdonhang> chitietdonhangCollection;
 
     public Donhang() {
     }
@@ -152,6 +152,14 @@ public class Donhang implements Serializable {
         this.trangThai = trangThai;
     }
 
+    public Collection<Chitietdonhang> getChitietdonhangCollection() {
+        return chitietdonhangCollection;
+    }
+
+    public void setChitietdonhangCollection(Collection<Chitietdonhang> chitietdonhangCollection) {
+        this.chitietdonhangCollection = chitietdonhangCollection;
+    }
+
     public Khachhang getMaKH() {
         return maKH;
     }
@@ -174,14 +182,6 @@ public class Donhang implements Serializable {
 
     public void setMaVC(Vanchuyen maVC) {
         this.maVC = maVC;
-    }
-
-    public Collection<Chitietdonhang> getChitietdonhangCollection() {
-        return chitietdonhangCollection;
-    }
-
-    public void setChitietdonhangCollection(Collection<Chitietdonhang> chitietdonhangCollection) {
-        this.chitietdonhangCollection = chitietdonhangCollection;
     }
 
     @Override

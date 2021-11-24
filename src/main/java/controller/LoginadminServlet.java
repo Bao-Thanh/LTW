@@ -13,6 +13,10 @@ import javax.servlet.http.HttpSession;
 
 import dao.QuantriDAOImpl;
 
+/**
+ *
+ * @author BaoThanh
+ */
 @WebServlet(name = "LoginadminServlet", urlPatterns = {"/LoginadminServlet"})
 public class LoginadminServlet extends HttpServlet {
 

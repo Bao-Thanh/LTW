@@ -38,8 +38,7 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Sanpham.findByGia", query = "SELECT s FROM Sanpham s WHERE s.gia = :gia"),
     @NamedQuery(name = "Sanpham.findByMoTa", query = "SELECT s FROM Sanpham s WHERE s.moTa = :moTa"),
     @NamedQuery(name = "Sanpham.findByTrangThai", query = "SELECT s FROM Sanpham s WHERE s.trangThai = :trangThai"),
-    @NamedQuery(name = "Sanpham.findByThuongHieu", query = "SELECT s FROM Sanpham s WHERE s.thuongHieu = :thuongHieu")
-})
+    @NamedQuery(name = "Sanpham.findByThuongHieu", query = "SELECT s FROM Sanpham s WHERE s.thuongHieu = :thuongHieu")})
 public class Sanpham implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -62,6 +61,9 @@ public class Sanpham implements Serializable {
     private String moTa;
     @Column(name = "TrangThai")
     private Boolean trangThai;
+    @Size(max = 500)
+    @Column(name = "ThuongHieu")
+    private String thuongHieu;
     @JoinTable(name = "danhgia", joinColumns = {
         @JoinColumn(name = "MaSP", referencedColumnName = "MaSP"),
         @JoinColumn(name = "MaSP", referencedColumnName = "MaSP")}, inverseJoinColumns = {
@@ -69,8 +71,6 @@ public class Sanpham implements Serializable {
         @JoinColumn(name = "MaKH", referencedColumnName = "MaKH")})
     @ManyToMany
     private Collection<Khachhang> khachhangCollection;
-    @OneToMany(mappedBy = "maSP")
-    private Collection<Cauhinh> cauhinhCollection;
     @OneToMany(mappedBy = "maSP")
     private Collection<Chitietdonhang> chitietdonhangCollection;
     @JoinColumns({
@@ -82,11 +82,10 @@ public class Sanpham implements Serializable {
     @ManyToOne
     private Nhomsanpham maNhomSP;
     @OneToMany(mappedBy = "maSP")
+    private Collection<Cauhinh> cauhinhCollection;
+    @OneToMany(mappedBy = "maSP")
     private Collection<Uathich> uathichCollection;
 
-    @Size(max = 500)
-    @Column(name = "ThuongHieu")
-    private String thuongHieu;
     public Sanpham() {
     }
 
@@ -134,15 +133,6 @@ public class Sanpham implements Serializable {
         this.moTa = moTa;
     }
 
-    public String getThuongHieu() {
-        return thuongHieu;
-    }
-
-    public void setThuongHieu(String thuongHieu) {
-        this.thuongHieu = thuongHieu;
-    }
-    
-    
     public Boolean getTrangThai() {
         return trangThai;
     }
@@ -151,20 +141,20 @@ public class Sanpham implements Serializable {
         this.trangThai = trangThai;
     }
 
+    public String getThuongHieu() {
+        return thuongHieu;
+    }
+
+    public void setThuongHieu(String thuongHieu) {
+        this.thuongHieu = thuongHieu;
+    }
+
     public Collection<Khachhang> getKhachhangCollection() {
         return khachhangCollection;
     }
 
     public void setKhachhangCollection(Collection<Khachhang> khachhangCollection) {
         this.khachhangCollection = khachhangCollection;
-    }
-
-    public Collection<Cauhinh> getCauhinhCollection() {
-        return cauhinhCollection;
-    }
-
-    public void setCauhinhCollection(Collection<Cauhinh> cauhinhCollection) {
-        this.cauhinhCollection = cauhinhCollection;
     }
 
     public Collection<Chitietdonhang> getChitietdonhangCollection() {
@@ -189,6 +179,14 @@ public class Sanpham implements Serializable {
 
     public void setMaNhomSP(Nhomsanpham maNhomSP) {
         this.maNhomSP = maNhomSP;
+    }
+
+    public Collection<Cauhinh> getCauhinhCollection() {
+        return cauhinhCollection;
+    }
+
+    public void setCauhinhCollection(Collection<Cauhinh> cauhinhCollection) {
+        this.cauhinhCollection = cauhinhCollection;
     }
 
     public Collection<Uathich> getUathichCollection() {
@@ -221,8 +219,7 @@ public class Sanpham implements Serializable {
 
     @Override
     public String toString() {
-        return "Sanpham{" + "maSP=" + maSP + ", tenSP=" + tenSP + ", anh=" + anh + ", gia=" + gia + ", mota=" + moTa + ", trangthai=" + trangThai
-                +"ThuongHieu" + thuongHieu;
+        return "model.Sanpham[ maSP=" + maSP + " ]";
     }
     
 }

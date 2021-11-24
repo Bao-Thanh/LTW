@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <div class="footer-about-us">
-                    <h2>u<span>Nhóm 9 Shop</span></h2>
+                    <h2><span>Nhóm 9 Shop</span></h2>
                     <p>Nhóm 9 Shop</p>
                     <div class="footer-social">
                         <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>

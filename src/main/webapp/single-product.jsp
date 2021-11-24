@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -182,7 +182,7 @@
                                                 </div>
                                             </div>
 
-                                            <h2><a href="">${th.tenSP}</a></h2>
+                                            <h2><a href="singleproduct?maSP=${th.maSP}">${th.tenSP}</a></h2>
 
                                             <div class="product-carousel-price">
                                                 <ins>$${th.gia}</ins> <del></del>

@@ -24,6 +24,10 @@ import dao.KhachhangDAO;
 import dao.KhachhangDAOImpl;
 
 
+/**
+ *
+ * @author BaoThanh
+ */
 public class ResetPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private KhachhangDAOImpl khDAO = new KhachhangDAOImpl();

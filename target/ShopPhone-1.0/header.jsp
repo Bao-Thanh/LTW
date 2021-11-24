@@ -107,16 +107,116 @@
             </div> 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="SanphamServlet">Home</a></li>
+                    <li><a href="SanphamServlet">Trang chủ</a></li>
                     <li><a href="ShopServlet">Shop page</a></li>
-                    <li><a href="single-product.jsp">Single product</a></li>
-                    <li><a href="cart.jsp">Cart</a></li>
-                    <li><a href="checkout.jsp">Checkout</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="cart.jsp">Giỏ hàng</a></li>
+                    <li><a href="checkout.jsp">Thanh toán</a></li>
+                    <li><a href="#">Category điện thoại</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#contact">Liên hệ</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#other">Khác</a></li>
                 </ul>
             </div>  
         </div>
     </div>
 </div> <!-- End mainmenu area -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contact" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contact">Thông tin liên hệ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Họ và tên</th>
+                            <th scope="col">MSSV</th>
+                            <th scope="col">Trang cá nhân</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Nguyễn Lê Bảo Thanh</td>
+                            <td>
+                                <a href="https://https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=19110019@student.hcmute.edu.vn" target="_blank">19110019</a>
+                            </td>
+                            <td>
+                                <a href="https://https://www.facebook.com/lebaothanh.nguyen.73/" target="_blank">Nguyễn Lê Bảo Thanh </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Nguyễn Hồng Phúc</td>
+                            <td>
+                                <a href="https://mail.google.com/mail/u/0/?fs=1&amp;tf=cm&amp;source=mailto&amp;to=19110267@student.hcmute.edu.vn" target="_blank">19110267</a>
+                            </td>
+                            <td>
+                                <a href="https://www.facebook.com/profile.php?id=100004408368875/" target="_blank">Nguyễn Hồng Phúc </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Lê Minh Hiếu</td>
+                            <td>
+                                <a href="https://mail.google.com/mail/u/0/?fs=1&amp;tf=cm&amp;source=mailto&amp;to=19110203@student.hcmute.edu.vn" target="_blank">19110203</a>
+                            </td>
+                            <td>
+                                <a href="https://www.facebook.com/LeeHieu.13/" target="_blank">Lê Hiếu(Authentic Seller)</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="other" tabindex="-1" aria-labelledby="other" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="other">Khác</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Loại tài tài liệu</th>
+                            <th scope="col">Mô tả</th>
+                            <th scope="col">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Github</td>
+                            <td>Link github đồ án của nhóm</td>
+                            <td>
+                                <a href="https://github.com/Bao-Thanh/LTW" target="_blank">Link</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

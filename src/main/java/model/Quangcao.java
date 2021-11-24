@@ -143,7 +143,7 @@ public class Quangcao implements Serializable {
 
     @Override
     public String toString() {
-        return "MaQC" + maQC + "TenQC" + tenQC + "Anh" + anh +"Gia" +gia;
+        return "model.Quangcao[ maQC=" + maQC + " ]";
     }
     
 }

@@ -6,13 +6,10 @@ model\Uathich_.class
 model\Sanpham.class
 model\Sanpham_.class
 model\Uathich.class
-model\History.class
 model\Nhomsanpham.class
 model\Thanhtoan.class
-model\Sequence.class
 model\Khachhang_.class
 model\Khachhang.class
-model\Sequence_.class
 controller\ShopServlet.class
 model\Cauhinh.class
 controller\SearchServlet.class
@@ -25,7 +22,6 @@ dao\QuantriDAOImpl.class
 dao\DBUtil.class
 model\Nhacungcap.class
 model\Vanchuyen_.class
-model\History_.class
 model\Quangcao.class
 model\Cauhinh_.class
 model\Quangcao_.class

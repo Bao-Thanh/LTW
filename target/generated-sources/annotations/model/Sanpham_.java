@@ -11,7 +11,7 @@ import model.Nhacungcap;
 import model.Nhomsanpham;
 import model.Uathich;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-23T23:53:20")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-24T23:29:56")
 @StaticMetamodel(Sanpham.class)
 public class Sanpham_ { 
 

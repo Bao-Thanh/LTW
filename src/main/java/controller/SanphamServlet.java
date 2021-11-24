@@ -7,6 +7,8 @@ package controller;
 
 import dao.QuangcaoDAOImpl;
 import dao.SanphamDAOImpl;
+import dao.ThanhtoanDAOImpl;
+import dao.VanchuyenDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -16,10 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Quangcao;
 import model.Sanpham;
+import model.Thanhtoan;
+import model.Vanchuyen;
 
 /**
  *
  * @author PhucNguyen
+ * @contribute BaoThanh
  */
 public class SanphamServlet extends HttpServlet {
 
@@ -41,10 +46,17 @@ public class SanphamServlet extends HttpServlet {
         QuangcaoDAOImpl daoqc = new QuangcaoDAOImpl();
         List<Quangcao> qc = daoqc.getList();
 
+        VanchuyenDAOImpl vchdao = new VanchuyenDAOImpl();
+        List<Vanchuyen> vanchuyen = vchdao.getList();
+
+        ThanhtoanDAOImpl thdao = new ThanhtoanDAOImpl();
+        List<Thanhtoan> thanhtoan = thdao.getList();
+
         request.setAttribute("sanpham", sanpham);
         request.setAttribute("quangcao", qc);
-        
-        
+        request.setAttribute("vanchuyen", vanchuyen);
+        request.setAttribute("thanhtoan", thanhtoan);
+
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
