@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.QuantriDAOImpl;
+import dao.SanphamDAOImpl;
+import java.util.List;
+import model.Sanpham;
 
 /**
  *
@@ -48,7 +51,7 @@ public class LoginadminServlet extends HttpServlet {
             request.setAttribute("err", err);
         }
 
-        String url = "/login.jsp";
+        String url = "/adminlogin.jsp";
 
         try {
             if (err.length() == 0) {
@@ -58,18 +61,18 @@ public class LoginadminServlet extends HttpServlet {
                 Cookie loginCookie = new Cookie("ad_user", username);
                 loginCookie.setMaxAge(60 * 60 * 24 * 365 * 2);
                 response.addCookie(loginCookie);
-                response.sendRedirect("admin/dashboard.jsp");
-                url = "/admin/dashboard.jsp";
+                response.sendRedirect("SanphamADServlet");
+                url = "/SanphamADServlet";
 
             } else {
-                url = "/login.jsp";
+                url = "/adminlogin.jsp";
                 RequestDispatcher rd = getServletContext()
                         .getRequestDispatcher(url);
                 rd.forward(request, response);
             }
 
         } catch (IOException | ServletException e) {
-            response.sendRedirect("/login.jsp");
+            response.sendRedirect("/adminlogin.jsp");
         }
     }
 

@@ -63,65 +63,64 @@
         </div> <!-- End slider area -->
 
         <div class="promo-area">
-            <div class="zigzag-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#return">
-                            <div class="single-promo promo1">
-                                <i class="fa fa-refresh"></i>
-                                <p>Đổi trả trong 30 ngày</p>
-                            </div>
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#return">
+                        <div class="single-promo promo1">
+                            <i class="fa fa-refresh"></i>
+                            <p>Đổi trả trong 30 ngày</p>
                         </div>
-                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#vanchuyen">
-                            <div class="single-promo promo2">
-                                <i class="fa fa-truck"></i>
-                                <p>Vận chuyển</p>
-                            </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#vanchuyen">
+                        <div class="single-promo promo2">
+                            <i class="fa fa-truck"></i>
+                            <p>Vận chuyển</p>
                         </div>
-                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#thanhtoan">
-                            <div class="single-promo promo3">
-                                <i class="fa fa-money"></i>
-                                <p>Thanh toán</p>
-                            </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#thanhtoan">
+                        <div class="single-promo promo3">
+                            <i class="fa fa-money"></i>
+                            <p>Thanh toán</p>
                         </div>
-                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#new">
-                            <div class="single-promo promo4">
-                                <i class="fa fa-gift"></i>
-                                <p>Sản phẩm mới</p>
-                            </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#new">
+                        <div class="single-promo promo4">
+                            <i class="fa fa-gift"></i>
+                            <p>Sản phẩm mới</p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div> <!-- End promo area -->
 
 
         <div class="maincontent-area">
-            <div class="zigzag-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="latest-product">
-                                <h2 class="section-title">Sản phẩm mới</h2>
-                                <div class="product-carousel">
-                                    <c:forEach items="${sanpham}" var="sp" >
-                                        <div class="single-product">
-                                            <div class="product-f-image">
-                                                <img src="${sp.anh}" alt="">
-                                                <div class="product-hover">
-                                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                                    <a href="singleproduct?maSP=${sp.maSP}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                                </div>
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="latest-product">
+                            <h2 class="section-title">Sản phẩm mới</h2>
+                            <div class="product-carousel">
+                                <c:forEach items="${sanpham}" var="sp" >
+                                    <div class="single-product">
+                                        <div class="product-f-image">
+                                            <img src="${sp.anh}" alt="">
+                                            <div class="product-hover">
+                                                <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                                <a href="singleproduct?maSP=${sp.maSP}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                             </div>
-
-                                            <h2><a href="singleproduct?maSP=${sp.maSP}">${sp.tenSP}</a></h2>
-
-                                            <div class="product-carousel-price">
-                                                <ins>$${sp.gia}</ins> <del></del>
-                                            </div> 
                                         </div>
-                                    </c:forEach>
-                                </div>
+
+                                        <h2><a href="singleproduct?maSP=${sp.maSP}">${sp.tenSP}</a></h2>
+
+                                        <div class="product-carousel-price">
+                                            <ins>$${sp.gia}</ins> <del></del>
+                                        </div> 
+                                    </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -130,30 +129,28 @@
         </div> <!-- End main content area -->
 
         <div class="brands-area">
-            <div class="zigzag-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="brand-wrapper">
-                                <div class="brand-list">
-                                    <img src="img/brand1.png" alt="">
-                                    <img src="img/brand2.png" alt="">
-                                    <img src="img/brand3.png" alt="">
-                                    <img src="img/brand4.png" alt="">
-                                    <img src="img/brand5.png" alt="">
-                                    <img src="img/brand6.png" alt="">
-                                    <img src="img/brand1.png" alt="">
-                                    <img src="img/brand2.png" alt="">                            
-                                </div>
+            <div class="zigzag-bottom"> </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="brand-wrapper">
+                            <div class="brand-list">
+                                <img src="img/brand1.png" alt="">
+                                <img src="img/brand2.png" alt="">
+                                <img src="img/brand3.png" alt="">
+                                <img src="img/brand4.png" alt="">
+                                <img src="img/brand5.png" alt="">
+                                <img src="img/brand6.png" alt="">
+                                <img src="img/brand1.png" alt="">
+                                <img src="img/brand2.png" alt="">                            
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div> <!-- End brands area -->
+            </div> <!-- End brands area -->
 
-        <div class="product-widget-area">
-            <div class="zigzag-bottom">
+            <div class="product-widget-area">
+                <div class="zigzag-bottom"> </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -302,29 +299,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div> <!-- End product widget area -->
-        <jsp:include page="footer.jsp" flush="true"></jsp:include>
+            </div> <!-- End product widget area -->
+            <jsp:include page="footer.jsp" flush="true"></jsp:include>
 
-            <!-- Latest jQuery form server -->
-            <script src="https://code.jquery.com/jquery.min.js"></script>
+                <!-- Latest jQuery form server -->
+                <script src="https://code.jquery.com/jquery.min.js"></script>
 
-            <!-- Bootstrap JS form CDN -->
-            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                <!-- Bootstrap JS form CDN -->
+                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-            <!-- jQuery sticky menu -->
-            <script src="js/owl.carousel.min.js"></script>
-            <script src="js/jquery.sticky.js"></script>
+                <!-- jQuery sticky menu -->
+                <script src="js/owl.carousel.min.js"></script>
+                <script src="js/jquery.sticky.js"></script>
 
-            <!-- jQuery easing -->
-            <script src="js/jquery.easing.1.3.min.js"></script>
+                <!-- jQuery easing -->
+                <script src="js/jquery.easing.1.3.min.js"></script>
 
-            <!-- Main Script -->
-            <script src="js/main.js"></script>
+                <!-- Main Script -->
+                <script src="js/main.js"></script>
 
-            <!-- Slider -->
-            <script type="text/javascript" src="js/bxslider.min.js"></script>
-            <script type="text/javascript" src="js/script.slider.js"></script>
+                <!-- Slider -->
+                <script type="text/javascript" src="js/bxslider.min.js"></script>
+                <script type="text/javascript" src="js/script.slider.js"></script>
         </body>
     </html>
 

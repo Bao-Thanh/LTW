@@ -89,8 +89,13 @@ public class Sanpham implements Serializable {
     public Sanpham() {
     }
 
-    public Sanpham(Integer maSP) {
-        this.maSP = maSP;
+    public Sanpham(String tenSP, String anh, String gia,
+            String moTa, String thuongHieu) {
+        this.tenSP = tenSP;
+        this.anh = anh;
+        this.gia = gia;
+        this.moTa = moTa;
+        this.thuongHieu = thuongHieu;
     }
 
     public Integer getMaSP() {
@@ -221,5 +226,5 @@ public class Sanpham implements Serializable {
     public String toString() {
         return "model.Sanpham[ maSP=" + maSP + " ]";
     }
-    
+
 }

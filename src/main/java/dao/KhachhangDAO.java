@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.List;
 import model.Khachhang;
 
 public interface KhachhangDAO {
@@ -14,4 +15,5 @@ public interface KhachhangDAO {
 
     public Khachhang getKH(String username);
 
+     public List<Khachhang> getList();
 }

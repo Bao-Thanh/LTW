@@ -8,7 +8,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import model.Khachhang;
 
-
 public class KhachhangDAOImpl implements KhachhangDAO {
 
     @Override
@@ -25,7 +24,6 @@ public class KhachhangDAOImpl implements KhachhangDAO {
         } finally {
             em.close();
         }
-
     }
 
     @Override
@@ -72,15 +70,14 @@ public class KhachhangDAOImpl implements KhachhangDAO {
             em.close();
         }
     }
-    
 
     @Override
     public Khachhang getKH(String username) {
-          EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
         String qString = "SELECT k FROM Khachhang k WHERE k.tenKH = :username";
 
         TypedQuery<Khachhang> q = em.createQuery(qString, Khachhang.class);
-        
+
         q.setParameter("username", username);
 
         Khachhang kh = null;
@@ -96,5 +93,17 @@ public class KhachhangDAOImpl implements KhachhangDAO {
         }
         return kh;
     }
-    
+
+    @Override
+    public List<Khachhang> getList() {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT s FROM Khachhang s";
+
+        TypedQuery<Khachhang> q = em.createQuery(qString, Khachhang.class);
+
+        List<Khachhang> kh = q.getResultList();
+
+        return kh;
+    }
+
 }

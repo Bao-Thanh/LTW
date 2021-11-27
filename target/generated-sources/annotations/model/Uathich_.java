@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import model.Khachhang;
 import model.Sanpham;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-24T23:29:56")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-27T19:24:37")
 @StaticMetamodel(Uathich.class)
 public class Uathich_ { 
 

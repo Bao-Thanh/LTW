@@ -26,6 +26,30 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>controller.SearchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SanphamADServlet</servlet-name>
+        <servlet-class>controller.SanphamADServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NSP_NCCADServlet</servlet-name>
+        <servlet-class>controller.NSP_NCCADServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuangcaoADServlet</servlet-name>
+        <servlet-class>controller.QuangcaoADServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>KhachhangADServlet</servlet-name>
+        <servlet-class>controller.KhachhangADServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VCH_THADServlet</servlet-name>
+        <servlet-class>controller.VCH_THADServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DH_DG_UTADServlet</servlet-name>
+        <servlet-class>controller.DH_DG_UTADServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>taikhoan</servlet-name>
         <url-pattern>/taikhoan</url-pattern>
@@ -55,6 +79,30 @@
     <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SanphamADServlet</servlet-name>
+        <url-pattern>/SanphamADServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NSP_NCCADServlet</servlet-name>
+        <url-pattern>/NSP_NCCADServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuangcaoADServlet</servlet-name>
+        <url-pattern>/QuangcaoADServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KhachhangADServlet</servlet-name>
+        <url-pattern>/KhachhangADServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VCH_THADServlet</servlet-name>
+        <url-pattern>/VCH_THADServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DH_DG_UTADServlet</servlet-name>
+        <url-pattern>/DH_DG_UTADServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

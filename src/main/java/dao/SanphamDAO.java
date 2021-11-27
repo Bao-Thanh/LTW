@@ -16,7 +16,7 @@ public interface SanphamDAO {
     public Sanpham getSanpham(int idsp);
     
     //lấy sản phẩm theo mã nhóm sản phẩm
-    public List<Sanpham> getSanphamByIDmaNhomSP (String mnsp);
+    public List<Sanpham> getSanphamByIDmaNhomSP(int mnsp);
     
     //search list sản phẩm theo tên
     public List<Sanpham> searchByName(String name);
@@ -32,4 +32,8 @@ public interface SanphamDAO {
     
     //lấy sản phẩm có giá trên $30
     public List<Sanpham> getSanphamByPrice();
+    
+    public void updateSP (Sanpham sp);
+    
+    
 }

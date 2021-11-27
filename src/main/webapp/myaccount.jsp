@@ -4,13 +4,12 @@
 <!DOCTYPE html>
 <html lang = "vi">
     <head>
-       <jsp:include page="head.jsp" flush="true"></jsp:include>
-    </head>
-    <body>
-        <header>
+        <jsp:include page="head.jsp" flush="true"></jsp:include>
+        </head>
+        <body>
+            <header>
             <jsp:include page="header.jsp" flush="true"></jsp:include>
             </header>
-
         <%
             String err = "";
             if (request.getAttribute("err") != null) {
@@ -22,15 +21,17 @@
             request.setAttribute("kh", khachhang);
         %>
 
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
                         <form action="KhachhangServlet" method="POST">                      
                             <li style="color: red"><%=err%></li>
-                            <label class="" for="tenKH">Tên của bạn: <abbr title="required" class="required">*</abbr>
-                            </label>
-                            <input type="text" value="${kh.tenKH}" id="tenKH" name="tenKH" class="form-control">
+                            <div class="form-group">
+                                <label class="" for="tenKH">Tên của bạn: <abbr title="required" class="required">*</abbr>
+                                </label>
+                                <input type="text" value="${kh.tenKH}" id="tenKH" name="tenKH" class="form-control">
                             </div>
 
                             <div class="form-group">
