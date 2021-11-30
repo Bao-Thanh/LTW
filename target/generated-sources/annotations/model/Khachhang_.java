@@ -8,7 +8,7 @@ import model.Danhgia;
 import model.Donhang;
 import model.Uathich;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-29T21:33:40")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-30T22:13:55")
 @StaticMetamodel(Khachhang.class)
 public class Khachhang_ { 
 

@@ -5,16 +5,14 @@
  */
 package contrroller;
 
+import dao.SanphamDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Cart;
 import model.Sanpham;
 
 /**
@@ -22,14 +20,6 @@ import model.Sanpham;
  * @author PhucNguyen
  */
 public class CartServlet extends HttpServlet {
-
-    private static final long serialVersionUID = 1L;
-    private List<Cart> cart = new ArrayList<Cart>();
-
-    public CartServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,6 +33,17 @@ public class CartServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+        String id = request.getParameter("maSP");
+      
+             
+        SanphamDAOImpl daosp = new SanphamDAOImpl();
+        List<Sanpham> listsp = daosp.getSanphamByPrice();
+        
+        
+        request.setAttribute("listspcart", listsp);
+        request.getRequestDispatcher("cart.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -57,7 +58,7 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doPost(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -71,39 +72,7 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String command = request.getParameter("action");
-
-        String id = request.getParameter("maSP");
-        String tensp = request.getParameter("tensp");
-        String gia = request.getParameter("gia");
-        String anh = request.getParameter("anh");
-
-        if (command.equals("buy")) {
-            Sanpham p = new Sanpham(Integer.parseInt(id), tensp, anh, Double.parseDouble(gia), "", "");
-            addToCart(p);
-            // sau khi them vao gio hang ta se chuyen toi trang gio hang
-            // can tao session de luu tru gia tri
-            HttpSession session = request.getSession();
-
-            // ta test xem gio hang co them duoc ko?
-            System.out.println(cart.size());
-            session.setAttribute("cart", cart);
-            response.sendRedirect("cart.jsp");
-        }
-    }
-
-    public String addToCart(Sanpham sp) {
-        for (Cart item : cart) {
-            if (item.getSanpham().getMaSP() == sp.getMaSP()) {
-                item.setQuantity(item.getQuantity() + 1);
-                return "cart";
-            }
-        }
-        Cart c = new Cart();
-        c.setSanpham(sp);
-        c.setQuantity(1);
-        cart.add(c);
-        return "cart";
+        processRequest(request, response);
     }
 
     /**

@@ -51,12 +51,16 @@
         <servlet-class>controller.DH_DG_UTADServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CartServlet</servlet-name>
-        <servlet-class>controller.CartServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>LogoutadminServlet</servlet-name>
         <servlet-class>contrroller.LogoutadminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchCartServlet</servlet-name>
+        <servlet-class>contrroller.SearchCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>contrroller.CartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>taikhoan</servlet-name>
@@ -113,12 +117,16 @@
         <url-pattern>/DH_DG_UTADServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CartServlet</servlet-name>
-        <url-pattern>/cart</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>LogoutadminServlet</servlet-name>
         <url-pattern>/LogoutadminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchCartServlet</servlet-name>
+        <url-pattern>/searchCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

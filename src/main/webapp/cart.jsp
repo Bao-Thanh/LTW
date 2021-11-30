@@ -1,32 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Shop Page - Nhóm 9 Shop</title>
+        <jsp:include page="head.jsp" flush="true"></jsp:include>
+        </head>
+        <body>
 
-        <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
-    </head>
-    <body>
-
-        <header>
+            <header>
             <jsp:include page="header.jsp" flush="true"></jsp:include>
             </header>
 
@@ -51,8 +32,8 @@
                         <div class="col-md-4">
                             <div class="single-sidebar">
                                 <h2 class="sidebar-title">Search Products</h2>
-                                <form action="#">
-                                    <input type="text" placeholder="Search products...">
+                                <form action="searchCart" method="post">
+                                    <input name="txt"  type="text" placeholder="Search products..." value="${txtS}">
                                     <input type="submit" value="Search">
                                 </form>
                             </div>
@@ -62,9 +43,9 @@
                             <c:forEach items="${listspcart}" var="lscart">
                                 <div class="thubmnail-recent">
                                     <img src="${lscart.anh}" class="recent-thumb" alt="">
-                                    <h2><a href="single-product.jsp">${lscart.tenSP}</a></h2>
+                                    <h2><a href="singleproduct?maSP=${lscart.maSP}">${lscart.tenSP}</a></h2>
                                     <div class="product-sidebar-price">
-                                        <ins>$${lscart.gia}</ins> <del></del>
+                                        <ins>$${lscart.gia}</ins> 
                                     </div>                             
                                 </div>
                             </c:forEach>
@@ -98,39 +79,37 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach items="${sessionScope.itemlist}" var="sp">
-                                                <tr class="cart_item">
-                                                    <td class="product-remove">
-                                                        <a title="Remove this item" class="remove" href="#">×</a> 
-                                                    </td>
+                                            <tr class="cart_item">
+                                                <td class="product-remove">
+                                                    <a title="Remove this item" class="remove" href="#">×</a> 
+                                                </td>
 
-                                                    <td class="product-thumbnail">
-                                                        <a href="single-product.jsp"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="${sp.anh}"></a>
-                                                    </td>
+                                                <td class="product-thumbnail">
+                                                    <a href="single-product.jsp"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="${cart.anh}"></a>
+                                                </td>
 
-                                                    <td class="product-name">
-                                                        <a href="singleproduct?maSP=${sp.maSP}">${sp.tenSP}</a> 
-                                                    </td>
+                                                <td class="product-name">
+                                                    <a href="singleproduct?maSP=${cart.maSP}">${cart.tenSP}</a> 
+                                                </td>
 
-                                                    <td class="product-price">
-                                                        <span class="amount">${sp.gia}</span> 
-                                                    </td>
+                                                <td class="product-price">
+                                                    <span class="amount">${cart.gia}</span> 
+                                                </td>
 
-                                                    <td class="product-quantity">
-                                                        <div class="quantity buttons_added">
-                                                            <form action="cart" method="post">
-                                                                <input type="button" class="minus" value="-">
-                                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                                                                <input type="button" class="plus" value="+">
-                                                            </form>
-                                                        </div>
-                                                    </td>
+                                                <td class="product-quantity">
+                                                    <div class="quantity buttons_added">
+                                                        <form action="cart" method="post">
+                                                            <input type="button" class="minus" value="-">
+                                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
+                                                            <input type="button" class="plus" value="+">
+                                                        </form>
+                                                    </div>
+                                                </td>
 
-                                                    <td class="product-subtotal">
-                                                        <span class="amount">${sp.gia}</span> 
-                                                    </td>
-                                                </tr>
-                                            </c:forEach>
+                                                <td class="product-subtotal">
+                                                    <span class="amount">${cart.gia}</span> 
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td class="actions" colspan="6">
                                                     <div class="coupon">

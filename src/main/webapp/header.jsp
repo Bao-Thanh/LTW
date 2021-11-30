@@ -109,7 +109,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="SanphamServlet">Trang chủ</a></li>
                     <li><a href="ShopServlet">Shop page</a></li>
-                    <li><a href="cart.jsp">Giỏ hàng</a></li>
+                    <li><a href="cart">Giỏ hàng</a></li>
                     <li><a href="checkout.jsp">Thanh toán</a></li>
                     <li><a href="#">Category điện thoại</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#contact">Liên hệ</a></li>

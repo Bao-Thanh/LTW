@@ -12,6 +12,7 @@ dao\NSP_NCC_DAO.class
 model\Uathich.class
 model\Nhomsanpham.class
 model\Thanhtoan.class
+contrroller\SearchCartServlet.class
 model\Khachhang_.class
 dao\DanhgiaDAO.class
 model\Cart_.class
@@ -38,6 +39,7 @@ model\Quangcao.class
 model\Cauhinh_.class
 dao\CartDAO.class
 model\Quangcao_.class
+contrroller\LogoutadminServlet.class
 controller\SignupServlet.class
 dao\DanhgiaDAOImpl.class
 dao\CauhinhDAOImpl.class
