@@ -1,6 +1,3 @@
-<%@page import="java.util.List"%>
-<%@page import="model.Sanpham"%>
-<%@page import="dao.SanphamDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -51,9 +48,6 @@
                     </div>
                 </div>
             </div>
-
-
-
 
             <div class="single-product-area">
                 <div class="zigzag-bottom"></div>
