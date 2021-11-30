@@ -18,13 +18,15 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "cauhinh")
+@Table(name = "cauhinh", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Cauhinh.findAll", query = "SELECT c FROM Cauhinh c"),
     @NamedQuery(name = "Cauhinh.findByMaCauHinh", query = "SELECT c FROM Cauhinh c WHERE c.maCauHinh = :maCauHinh"),
@@ -193,7 +195,7 @@ public class Cauhinh implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Cauhinh[ maCauHinh=" + maCauHinh + " ]";
+        return "nodel.Cauhinh[ maCauHinh=" + maCauHinh + " ]";
     }
     
 }

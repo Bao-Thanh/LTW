@@ -8,28 +8,30 @@ package model;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "sanpham")
+@Table(name = "sanpham", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Sanpham.findAll", query = "SELECT s FROM Sanpham s"),
     @NamedQuery(name = "Sanpham.findByMaSP", query = "SELECT s FROM Sanpham s WHERE s.maSP = :maSP"),
@@ -38,7 +40,8 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Sanpham.findByGia", query = "SELECT s FROM Sanpham s WHERE s.gia = :gia"),
     @NamedQuery(name = "Sanpham.findByMoTa", query = "SELECT s FROM Sanpham s WHERE s.moTa = :moTa"),
     @NamedQuery(name = "Sanpham.findByTrangThai", query = "SELECT s FROM Sanpham s WHERE s.trangThai = :trangThai"),
-    @NamedQuery(name = "Sanpham.findByThuongHieu", query = "SELECT s FROM Sanpham s WHERE s.thuongHieu = :thuongHieu")})
+    @NamedQuery(name = "Sanpham.findByThuongHieu", query = "SELECT s FROM Sanpham s WHERE s.thuongHieu = :thuongHieu"),
+    @NamedQuery(name = "Sanpham.findBySoLuong", query = "SELECT s FROM Sanpham s WHERE s.soLuong = :soLuong")})
 public class Sanpham implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -53,9 +56,9 @@ public class Sanpham implements Serializable {
     @Size(max = 500)
     @Column(name = "Anh")
     private String anh;
-    @Size(max = 500)
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "Gia")
-    private String gia;
+    private Double gia;
     @Size(max = 500)
     @Column(name = "MoTa")
     private String moTa;
@@ -64,38 +67,40 @@ public class Sanpham implements Serializable {
     @Size(max = 500)
     @Column(name = "ThuongHieu")
     private String thuongHieu;
-    @JoinTable(name = "danhgia", joinColumns = {
-        @JoinColumn(name = "MaSP", referencedColumnName = "MaSP"),
-        @JoinColumn(name = "MaSP", referencedColumnName = "MaSP")}, inverseJoinColumns = {
-        @JoinColumn(name = "MaKH", referencedColumnName = "MaKH"),
-        @JoinColumn(name = "MaKH", referencedColumnName = "MaKH")})
-    @ManyToMany
-    private Collection<Khachhang> khachhangCollection;
+    @Column(name = "SoLuong")
+    private Integer soLuong;
+    @OneToMany(mappedBy = "maSP")
+    private Collection<Cauhinh> cauhinhCollection;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "sanpham")
+    private Cart cart;
     @OneToMany(mappedBy = "maSP")
     private Collection<Chitietdonhang> chitietdonhangCollection;
-    @JoinColumns({
-        @JoinColumn(name = "MaNCC", referencedColumnName = "MaNCC"),
-        @JoinColumn(name = "MaNCC", referencedColumnName = "MaNCC")})
+    @JoinColumn(name = "MaNCC", referencedColumnName = "MaNCC")
     @ManyToOne
-    private Nhacungcap nhacungcap;
+    private Nhacungcap maNCC;
     @JoinColumn(name = "MaNhomSP", referencedColumnName = "MaNhomSP")
     @ManyToOne
     private Nhomsanpham maNhomSP;
     @OneToMany(mappedBy = "maSP")
-    private Collection<Cauhinh> cauhinhCollection;
+    private Collection<Danhgia> danhgiaCollection;
     @OneToMany(mappedBy = "maSP")
     private Collection<Uathich> uathichCollection;
 
     public Sanpham() {
     }
 
-    public Sanpham(String tenSP, String anh, String gia,
+    public Sanpham(int maSP, String tenSP, String anh, double gia,
             String moTa, String thuongHieu) {
+        this.maSP = maSP;
         this.tenSP = tenSP;
         this.anh = anh;
         this.gia = gia;
         this.moTa = moTa;
         this.thuongHieu = thuongHieu;
+    }
+    
+    public Sanpham(Integer maSP) {
+        this.maSP = maSP;
     }
 
     public Integer getMaSP() {
@@ -122,11 +127,11 @@ public class Sanpham implements Serializable {
         this.anh = anh;
     }
 
-    public String getGia() {
+    public Double getGia() {
         return gia;
     }
 
-    public void setGia(String gia) {
+    public void setGia(Double gia) {
         this.gia = gia;
     }
 
@@ -154,14 +159,32 @@ public class Sanpham implements Serializable {
         this.thuongHieu = thuongHieu;
     }
 
-    public Collection<Khachhang> getKhachhangCollection() {
-        return khachhangCollection;
+    public Integer getSoLuong() {
+        return soLuong;
     }
 
-    public void setKhachhangCollection(Collection<Khachhang> khachhangCollection) {
-        this.khachhangCollection = khachhangCollection;
+    public void setSoLuong(Integer soLuong) {
+        this.soLuong = soLuong;
     }
 
+    @XmlTransient
+    public Collection<Cauhinh> getCauhinhCollection() {
+        return cauhinhCollection;
+    }
+
+    public void setCauhinhCollection(Collection<Cauhinh> cauhinhCollection) {
+        this.cauhinhCollection = cauhinhCollection;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    @XmlTransient
     public Collection<Chitietdonhang> getChitietdonhangCollection() {
         return chitietdonhangCollection;
     }
@@ -170,12 +193,12 @@ public class Sanpham implements Serializable {
         this.chitietdonhangCollection = chitietdonhangCollection;
     }
 
-    public Nhacungcap getNhacungcap() {
-        return nhacungcap;
+    public Nhacungcap getMaNCC() {
+        return maNCC;
     }
 
-    public void setNhacungcap(Nhacungcap nhacungcap) {
-        this.nhacungcap = nhacungcap;
+    public void setMaNCC(Nhacungcap maNCC) {
+        this.maNCC = maNCC;
     }
 
     public Nhomsanpham getMaNhomSP() {
@@ -186,14 +209,16 @@ public class Sanpham implements Serializable {
         this.maNhomSP = maNhomSP;
     }
 
-    public Collection<Cauhinh> getCauhinhCollection() {
-        return cauhinhCollection;
+    @XmlTransient
+    public Collection<Danhgia> getDanhgiaCollection() {
+        return danhgiaCollection;
     }
 
-    public void setCauhinhCollection(Collection<Cauhinh> cauhinhCollection) {
-        this.cauhinhCollection = cauhinhCollection;
+    public void setDanhgiaCollection(Collection<Danhgia> danhgiaCollection) {
+        this.danhgiaCollection = danhgiaCollection;
     }
 
+    @XmlTransient
     public Collection<Uathich> getUathichCollection() {
         return uathichCollection;
     }
@@ -224,7 +249,8 @@ public class Sanpham implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Sanpham[ maSP=" + maSP + " ]";
+        return "Sanpham{" + "maSP=" + maSP + ", tenSP=" + tenSP + ", anh=" + anh + ", gia=" + gia + ", mota=" + moTa + ", trangthai=" + trangThai
+                +"MaNhomSP" +maNhomSP +"ThuongHieu" + thuongHieu;
     }
-
+    
 }

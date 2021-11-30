@@ -18,13 +18,16 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "thanhtoan")
+@Table(name = "thanhtoan", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Thanhtoan.findAll", query = "SELECT t FROM Thanhtoan t"),
     @NamedQuery(name = "Thanhtoan.findByMaTT", query = "SELECT t FROM Thanhtoan t WHERE t.maTT = :maTT"),
@@ -89,6 +92,7 @@ public class Thanhtoan implements Serializable {
         this.trangThai = trangThai;
     }
 
+    @XmlTransient
     public Collection<Donhang> getDonhangCollection() {
         return donhangCollection;
     }
@@ -119,7 +123,7 @@ public class Thanhtoan implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Thanhtoan[ maTT=" + maTT + " ]";
+        return "nodel.Thanhtoan[ maTT=" + maTT + " ]";
     }
     
 }

@@ -106,4 +106,10 @@ public class KhachhangDAOImpl implements KhachhangDAO {
         return kh;
     }
 
+    
+    public static void main(String[] args) {
+        KhachhangDAOImpl dao = new KhachhangDAOImpl();
+        List<Khachhang> sp = dao.getList();
+        System.out.println(sp);
+    }
 }

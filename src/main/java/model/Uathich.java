@@ -17,13 +17,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "uathich")
+@Table(name = "uathich", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Uathich.findAll", query = "SELECT u FROM Uathich u"),
     @NamedQuery(name = "Uathich.findByMaUT", query = "SELECT u FROM Uathich u WHERE u.maUT = :maUT")})
@@ -95,7 +97,7 @@ public class Uathich implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Uathich[ maUT=" + maUT + " ]";
+        return "nodel.Uathich[ maUT=" + maUT + " ]";
     }
     
 }

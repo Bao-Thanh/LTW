@@ -18,13 +18,16 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "nhacungcap")
+@Table(name = "nhacungcap", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Nhacungcap.findAll", query = "SELECT n FROM Nhacungcap n"),
     @NamedQuery(name = "Nhacungcap.findByMaNCC", query = "SELECT n FROM Nhacungcap n WHERE n.maNCC = :maNCC"),
@@ -46,7 +49,7 @@ public class Nhacungcap implements Serializable {
     private Boolean trangThai;
     @Column(name = "MaNhomSP")
     private Integer maNhomSP;
-    @OneToMany(mappedBy = "nhacungcap")
+    @OneToMany(mappedBy = "maNCC")
     private Collection<Sanpham> sanphamCollection;
 
     public Nhacungcap() {
@@ -88,6 +91,7 @@ public class Nhacungcap implements Serializable {
         this.maNhomSP = maNhomSP;
     }
 
+    @XmlTransient
     public Collection<Sanpham> getSanphamCollection() {
         return sanphamCollection;
     }
@@ -118,7 +122,7 @@ public class Nhacungcap implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Nhacungcap[ maNCC=" + maNCC + " ]";
+        return "nodel.Nhacungcap[ maNCC=" + maNCC + " ]";
     }
     
 }

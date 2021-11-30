@@ -23,13 +23,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "donhang")
+@Table(name = "donhang", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Donhang.findAll", query = "SELECT d FROM Donhang d"),
     @NamedQuery(name = "Donhang.findByMaDH", query = "SELECT d FROM Donhang d WHERE d.maDH = :maDH"),
@@ -69,8 +72,6 @@ public class Donhang implements Serializable {
     private Date ngayMua;
     @Column(name = "TrangThai")
     private Boolean trangThai;
-    @OneToMany(mappedBy = "maDH")
-    private Collection<Chitietdonhang> chitietdonhangCollection;
     @JoinColumn(name = "MaKH", referencedColumnName = "MaKH")
     @ManyToOne
     private Khachhang maKH;
@@ -80,6 +81,8 @@ public class Donhang implements Serializable {
     @JoinColumn(name = "MaVC", referencedColumnName = "MaVC")
     @ManyToOne
     private Vanchuyen maVC;
+    @OneToMany(mappedBy = "maDH")
+    private Collection<Chitietdonhang> chitietdonhangCollection;
 
     public Donhang() {
     }
@@ -152,14 +155,6 @@ public class Donhang implements Serializable {
         this.trangThai = trangThai;
     }
 
-    public Collection<Chitietdonhang> getChitietdonhangCollection() {
-        return chitietdonhangCollection;
-    }
-
-    public void setChitietdonhangCollection(Collection<Chitietdonhang> chitietdonhangCollection) {
-        this.chitietdonhangCollection = chitietdonhangCollection;
-    }
-
     public Khachhang getMaKH() {
         return maKH;
     }
@@ -184,6 +179,15 @@ public class Donhang implements Serializable {
         this.maVC = maVC;
     }
 
+    @XmlTransient
+    public Collection<Chitietdonhang> getChitietdonhangCollection() {
+        return chitietdonhangCollection;
+    }
+
+    public void setChitietdonhangCollection(Collection<Chitietdonhang> chitietdonhangCollection) {
+        this.chitietdonhangCollection = chitietdonhangCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -206,7 +210,7 @@ public class Donhang implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Donhang[ maDH=" + maDH + " ]";
+        return "nodel.Donhang[ maDH=" + maDH + " ]";
     }
     
 }

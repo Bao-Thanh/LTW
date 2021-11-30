@@ -16,13 +16,15 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "quangcao")
+@Table(name = "quangcao", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Quangcao.findAll", query = "SELECT q FROM Quangcao q"),
     @NamedQuery(name = "Quangcao.findByMaQC", query = "SELECT q FROM Quangcao q WHERE q.maQC = :maQC"),
@@ -143,7 +145,7 @@ public class Quangcao implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Quangcao[ maQC=" + maQC + " ]";
+        return "nodel.Quangcao[ maQC=" + maQC + " ]";
     }
     
 }

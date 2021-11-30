@@ -17,13 +17,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "chitietdonhang")
+@Table(name = "chitietdonhang", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Chitietdonhang.findAll", query = "SELECT c FROM Chitietdonhang c"),
     @NamedQuery(name = "Chitietdonhang.findByMaCTDH", query = "SELECT c FROM Chitietdonhang c WHERE c.maCTDH = :maCTDH"),
@@ -129,7 +131,7 @@ public class Chitietdonhang implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Chitietdonhang[ maCTDH=" + maCTDH + " ]";
+        return "nodel.Chitietdonhang[ maCTDH=" + maCTDH + " ]";
     }
     
 }

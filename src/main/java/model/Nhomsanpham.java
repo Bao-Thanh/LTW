@@ -18,13 +18,16 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "nhomsanpham")
+@Table(name = "nhomsanpham", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Nhomsanpham.findAll", query = "SELECT n FROM Nhomsanpham n"),
     @NamedQuery(name = "Nhomsanpham.findByMaNhomSP", query = "SELECT n FROM Nhomsanpham n WHERE n.maNhomSP = :maNhomSP"),
@@ -77,6 +80,7 @@ public class Nhomsanpham implements Serializable {
         this.trangThai = trangThai;
     }
 
+    @XmlTransient
     public Collection<Sanpham> getSanphamCollection() {
         return sanphamCollection;
     }
@@ -107,7 +111,7 @@ public class Nhomsanpham implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Nhomsanpham[ maNhomSP=" + maNhomSP + " ]";
+        return "nodel.Nhomsanpham[ maNhomSP=" + maNhomSP + " ]";
     }
     
 }

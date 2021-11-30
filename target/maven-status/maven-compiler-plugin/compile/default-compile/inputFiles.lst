@@ -1,52 +1,56 @@
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\SanphamServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\DonhangDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\QuangcaoDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Khachhang.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Quangcao.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\ResetPassword.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\KhachhangADServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\SanphamADServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\DanhgiaDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Sanpham.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\NSP_NCC_DAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\UathichDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\CauhinhDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\DanhgiaDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\ShopServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\DH_DG_UTADServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\NSP_NCC_DAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\VanchuyenDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Nhomsanpham.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\ThanhtoanDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\UpdateSP.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\VanchuyenDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\ThanhtoanDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\SearchServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\QuantriDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\LoginadminServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\DonhangDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\CauhinhDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Nhacungcap.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Thanhtoan.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\KhachhangServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\VCH_THADServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\SanphamDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Donhang.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\SignupServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Vanchuyen.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Cauhinh.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\UathichDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\LogoutServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\KhachhangDAO.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\KhachhangDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\QuantriDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\LoginServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Uathich.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\QuangcaoDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Quantri.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\SanphamDAOImpl.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\dao\DBUtil.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\QuangcaoADServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\model\Chitietdonhang.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\NSP_NCCADServlet.java
-C:\Users\admin\OneDrive\Documents\NetBeansProjects\ShopPhone\src\main\java\controller\SingleproductServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Danhgia.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Quantri.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\CartServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\LoginadminServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Chitietdonhang.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Khachhang.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Cart.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Nhomsanpham.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\SanphamDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\SanphamADServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\SignupServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Donhang.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\SingleproductServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\DanhgiaDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\UathichDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\DonhangDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\CauhinhDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\DonhangDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Cauhinh.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\NSP_NCCADServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\QuantriDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\LogoutServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\KhachhangServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\VCH_THADServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\NSP_NCC_DAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\ShopServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\DBUtil.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\QuangcaoDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\DH_DG_UTADServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\ResetPassword.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\KhachhangADServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Uathich.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\LoginServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\VanchuyenDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\CauhinhDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Quangcao.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\SanphamServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\UpdateSP.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\UathichDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\QuangcaoADServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\DanhgiaDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\KhachhangDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\ThanhtoanDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\SanphamDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Thanhtoan.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\QuantriDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Vanchuyen.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\contrroller\SearchServlet.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\KhachhangDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\QuangcaoDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\NSP_NCC_DAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Nhacungcap.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\model\Sanpham.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\CartDAO.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\ThanhtoanDAOImpl.java
+E:\Self-Study\Web Application\MobileShop_3\src\main\java\dao\VanchuyenDAOImpl.java

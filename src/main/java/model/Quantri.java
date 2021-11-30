@@ -16,13 +16,15 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "quantri")
+@Table(name = "quantri", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Quantri.findAll", query = "SELECT q FROM Quantri q"),
     @NamedQuery(name = "Quantri.findByMaQT", query = "SELECT q FROM Quantri q WHERE q.maQT = :maQT"),
@@ -119,7 +121,7 @@ public class Quantri implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Quantri[ maQT=" + maQT + " ]";
+        return "nodel.Quantri[ maQT=" + maQT + " ]";
     }
     
 }

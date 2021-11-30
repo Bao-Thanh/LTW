@@ -13,19 +13,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
 @Entity
-@Table(name = "khachhang")
+@Table(name = "khachhang", catalog = "shopping", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Khachhang.findAll", query = "SELECT k FROM Khachhang k"),
     @NamedQuery(name = "Khachhang.findByMaKH", query = "SELECT k FROM Khachhang k WHERE k.maKH = :maKH"),
@@ -65,16 +67,17 @@ public class Khachhang implements Serializable {
     private String email;
     @Column(name = "TrangThai")
     private Boolean trangThai;
-    @ManyToMany(mappedBy = "khachhangCollection")
-    private Collection<Sanpham> sanphamCollection;
     @OneToMany(mappedBy = "maKH")
     private Collection<Donhang> donhangCollection;
+    @OneToMany(mappedBy = "maKH")
+    private Collection<Danhgia> danhgiaCollection;
     @OneToMany(mappedBy = "maKH")
     private Collection<Uathich> uathichCollection;
 
     public Khachhang() {
     }
 
+    
     public Khachhang(String tenKH, String tenTK, String matKhau,
             String diaChi, String sdt, String email) {
         this.tenKH = tenKH;
@@ -84,7 +87,12 @@ public class Khachhang implements Serializable {
         this.sdt = sdt;
         this.email = email;
     }
+    
+    public Khachhang(Integer maKH) {
+        this.maKH = maKH;
+    }
 
+    
     public Integer getMaKH() {
         return maKH;
     }
@@ -149,14 +157,7 @@ public class Khachhang implements Serializable {
         this.trangThai = trangThai;
     }
 
-    public Collection<Sanpham> getSanphamCollection() {
-        return sanphamCollection;
-    }
-
-    public void setSanphamCollection(Collection<Sanpham> sanphamCollection) {
-        this.sanphamCollection = sanphamCollection;
-    }
-
+    @XmlTransient
     public Collection<Donhang> getDonhangCollection() {
         return donhangCollection;
     }
@@ -165,6 +166,16 @@ public class Khachhang implements Serializable {
         this.donhangCollection = donhangCollection;
     }
 
+    @XmlTransient
+    public Collection<Danhgia> getDanhgiaCollection() {
+        return danhgiaCollection;
+    }
+
+    public void setDanhgiaCollection(Collection<Danhgia> danhgiaCollection) {
+        this.danhgiaCollection = danhgiaCollection;
+    }
+
+    @XmlTransient
     public Collection<Uathich> getUathichCollection() {
         return uathichCollection;
     }
@@ -195,7 +206,7 @@ public class Khachhang implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Khachhang[ maKH=" + maKH + " ]";
+        return "nodel.Khachhang[ maKH=" + maKH + " ]";
     }
-
+    
 }
