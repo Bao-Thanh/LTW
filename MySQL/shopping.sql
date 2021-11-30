@@ -1,5 +1,6 @@
 ﻿create database shopping;
 
+
 drop database shopping;
 
 use shopping;
@@ -8,16 +9,16 @@ select * from CauHinh;
 
 create table CauHinh(
 MaCauHinh int primary key AUTO_INCREMENT,
-ManHinh nvarchar(500) null,
-HeDieuHanh nvarchar(500) null,
-CameraSau nvarchar(500) null,
-CameraTruoc nvarchar(500) null,
-CPU nvarchar(500) null,
-Ram nvarchar(500) null,
-Rom nvarchar(500) null,
-TheSim nvarchar(500) null,
-DungLuongPin nvarchar(500) null,
-MaSP int null
+ManHinh nvarchar(500) ,
+HeDieuHanh nvarchar(500) ,
+CameraSau nvarchar(500) ,
+CameraTruoc nvarchar(500) ,
+CPU nvarchar(500) ,
+Ram nvarchar(500)  ,
+Rom nvarchar(500)  ,
+TheSim nvarchar(500)  ,
+DungLuongPin nvarchar(500)  ,
+MaSP int  
 );
 
 
@@ -89,48 +90,50 @@ insert into CauHinh values(20, '6.5, Full HD+', 'Android 9.0 (Pie)', N'Chính 48
 
 create table ChiTietDonHang(
 MaCTDH int primary key AUTO_INCREMENT,
-MaDH int null,
-MaSP int null,
-SoLuong int null,
-GiaTien float null,
-TrangThai bit
+MaDH int  ,
+MaSP int  ,
+SoLuong int  ,
+GiaTien float  ,
+TrangThai bit null
 );
 
 
 
 create table DanhGia(
 MaDG int primary key AUTO_INCREMENT,
-Noidung int null,
-MaSP int null,
-MaKH int null
+Noidung int  ,
+MaSP int  ,
+MaKH int  
 );
 
 
 create table DonHang(
 MaDH int primary key AUTO_INCREMENT,
-TenKH nvarchar(500) null,
-Email nvarchar(500) null,
-DiaChi nvarchar(500) null,
-SDT nvarchar(500) null,
-TongTien float null,
-NgayMua Date null,
-TrangThai bit null,
-MaKH int null,
-MaTT int null,
-MaVC int null
+TenKH nvarchar(500)  ,
+Email nvarchar(500)  ,
+DiaChi nvarchar(500)  ,
+SDT nvarchar(500)  ,
+TongTien float  ,
+NgayMua Date  ,
+TrangThai bit  ,
+MaKH int  ,
+MaTT int  ,
+MaVC int  
 );
 
 
 create table KhachHang(
 MaKH int primary key AUTO_INCREMENT,
-TenKH nvarchar(500) null,
-TenTK nvarchar(50) null,
-MatKhau nvarchar(50) null,
-DiaChi nvarchar(500) null,
-SDT nvarchar(20) null,
-Email nvarchar(500) null,
-TrangThai bit null
+TenKH nvarchar(500)  ,
+TenTK nvarchar(50)  ,
+MatKhau nvarchar(50)  ,
+DiaChi nvarchar(500)  ,
+SDT nvarchar(20)  ,
+Email nvarchar(500)  ,
+TrangThai bit null 
 );
+
+select * from KhachHang;
 
 insert into KhachHang(MaKH, TenKH, TenTK, MatKhau, DiaChi, SDT, Email) values (1,"Nam","nam","123","HCM","0166222568","nam@gmail.com");
 insert into KhachHang(MaKH, TenKH, TenTK, MatKhau, DiaChi, SDT, Email) values (2,"Như","nhu","456","HCM","0951333885","nhu@gmail.com");
@@ -138,9 +141,9 @@ insert into KhachHang(TenKH, TenTK, MatKhau, DiaChi, SDT, Email) values ("Thanh"
 
 create table NhaCungCap(
 MaNCC int primary key AUTO_INCREMENT,
-TenNCC nvarchar(500) null,
-TrangThai bit null,
-MaNhomSP int null
+TenNCC nvarchar(500)  ,
+TrangThai bit null ,
+MaNhomSP int  
 );
 
 insert into NhaCungCap(MaNCC, TenNCC, MaNhomSP) values(1, N'Thế giới di động',1);
@@ -149,8 +152,8 @@ insert into NhaCungCap(MaNCC, TenNCC, MaNhomSP) values(3, N'Công Ty TNHH Thươ
 
 create table NhomSanPham(
 MaNhomSP int primary key AUTO_INCREMENT,
-TenNhomSP nvarchar(500) null,
-TrangThai bit null
+TenNhomSP nvarchar(500)  ,
+TrangThai bit null 
 );
 
 insert into NhomSanPham(MaNhomSP, TenNhomSP) values(1,'Apple');
@@ -159,15 +162,15 @@ insert into NhomSanPham(MaNhomSP, TenNhomSP) values(3,'Oppo');
 
 create table QuangCao(
 MaQC int primary key AUTO_INCREMENT,
-TenQC nvarchar(500) null,
-Anh nvarchar(500) null,
-Gia float null,
-NhaSanXuat nvarchar(500) null,
-MoTa nvarchar(500) null,
+TenQC nvarchar(500)  ,
+Anh nvarchar(500)  ,
+Gia float  ,
+NhaSanXuat nvarchar(500)  ,
+MoTa nvarchar(500)  ,
 TrangThai bit null
 );
 
-insert into QuangCao(MaQC, TenQC, Anh, Gia, NhaSanXuat, MoTa) values (1, 'Iphone 12 Series','https://cdn.tgdd.vn/2021/11/banner/laptopdesk(3)-340x340.jpg', 25000000, N'Mỹ', 
+insert into QuangCao(MaQC, TenQC, Anh, Gia, NhaSanXuat, MoTa) values (1, 'Iphone 12 Series','https://tintuc.dienthoaigiakho.vn/wp-content/uploads/2020/12/12-12-promax.jpg', 25000000, N'Mỹ', 
 N'Màn hình: 6.5, Super Retina XDR
 HĐH: iOS 13
 CPU: Apple A13 Bionic 6 nhân
@@ -186,25 +189,27 @@ Update QuangCao set Anh = 'https://tintuc.dienthoaigiakho.vn/wp-content/uploads/
 
 create table QuanTri(
 MaQT int primary key AUTO_INCREMENT,
-TenQT nvarchar(500) null,
-TaiKhoan nvarchar(500) null,
-MatKhau nvarchar(500) null,
-TrangThai bit null
+TenQT nvarchar(500)  ,
+TaiKhoan nvarchar(500)  ,
+MatKhau nvarchar(500)  ,
+TrangThai bit null  
 );
 
 insert into QuanTri(MaQT, TenQT, TaiKhoan, MatKhau) values (1,'quantrivien', 'admin', 'admin'); 
 
 create table SanPham(
 MaSP int primary key AUTO_INCREMENT,
-TenSP nvarchar(500) null,
-Anh nvarchar(500) null,
-Gia nvarchar(500) null,
-MaNCC int null,
-MoTa nvarchar(500) null,
-TrangThai bit null,
-MaNhomSP int null, 
-ThuongHieu nvarchar(500)
+TenSP nvarchar(500)  ,
+Anh nvarchar(500)  ,
+Gia double ,
+MaNCC int  ,
+MoTa nvarchar(500)  ,
+TrangThai bit null ,
+MaNhomSP int, 
+ThuongHieu nvarchar(500), 
+SoLuong int null 
 );
+
 
 select * from SanPham where MaNhomSP = 1;
 
@@ -382,11 +387,13 @@ RAM: 6 GB, ROM: 128 GB
 Camera: Chính 48 MP & Phụ 5 MP, Selfie: 16 MP',3,'Oppo');
 
 
+Select * from Sanpham where MaSP = 1;
+
 create table ThanhToan(
 MaTT int primary key AUTO_INCREMENT,
-TenTT nvarchar(500) null,
-MoTa nvarchar(500) null,
-TrangThai bit null
+TenTT nvarchar(500)  ,
+MoTa nvarchar(500)  ,
+TrangThai bit null 
 );
 
 insert into ThanhToan(MaTT, TenTT, MoTa) values(1,N'Thanh toán bằng thẻ tín dụng', N'Bạn có thể trả phí trực tiếp thông qua số tài khoản ATM');
@@ -394,22 +401,35 @@ insert into ThanhToan(MaTT, TenTT, MoTa) values(2,N'Thanh toán trực tiếp', 
 
 create table UaThich(
 MaUT int primary key AUTO_INCREMENT,
-MaKH int null,
-MaSP int null
+MaKH int  ,
+MaSP int  
 );
 
 
 create table VanChuyen(
 MaVC int primary key AUTO_INCREMENT,
-TenVC nvarchar(500) null,
-Gia float null,
-MoTa nvarchar(500) null,
-TrangThai bit null
+TenVC nvarchar(500)  ,
+Gia float  ,
+MoTa nvarchar(500)  ,
+TrangThai bit null 
 );
 
 insert into VanChuyen(MaVC, TenVC, Gia, MoTa) values(1, N'Viettel port',30000, N'Giao Hàng từ 5 - 10 ngày');
 insert into VanChuyen(MaVC, TenVC, Gia, MoTa) values(2, N'Speed Method',50000, N'Giao Hàng từ 3 - 5 ngày');
 insert into VanChuyen(MaVC, TenVC, Gia, MoTa) values(3, N'Go Viet',70000, N'Giao Hàng từ 1 - 3 ngày');
+
+
+
+create table Cart(
+MaSP int primary key not null,
+quantity int
+);
+
+
+
+
+alter table Cart
+add foreign key(MaSP) references Sanpham(MaSP);
 
 
 
@@ -464,3 +484,6 @@ add foreign key(MaKH) references KhachHang(MaKH);
 
 alter table UaThich
 add foreign key(MaSP) references SanPham(MaSP);
+
+
+
