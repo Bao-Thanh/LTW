@@ -32,6 +32,7 @@ public class KhachhangServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
+        String maKH = request.getParameter("maKH");
         String tenKH = request.getParameter("tenKH");
         String tenTK = request.getParameter("tenTK");
         String matKhau = request.getParameter("matKhau");
@@ -68,17 +69,17 @@ public class KhachhangServlet extends HttpServlet {
 
         try {
             if (err.length() == 0) {
-                Khachhang u = new Khachhang(tenKH, tenTK, matKhau, diaChi, sdt, email);
+                Khachhang u = new Khachhang( tenKH, tenTK, matKhau, diaChi, sdt, email);
                 khDAO.updateKH(u);
-                url = "/index.jsp";
+                url = "/SanphamServlet";
             } else {
-                url = "/myaccount.jsp";
+                url = "/index.jsp";
             }
             RequestDispatcher rd = getServletContext()
                     .getRequestDispatcher(url);
             rd.forward(request, response);
         } catch (IOException | ServletException e) {
-            response.sendRedirect("/myaccount.jsp");
+            response.sendRedirect("/SanphamServlet");
         }
     }
 

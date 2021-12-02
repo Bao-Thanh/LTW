@@ -1,4 +1,8 @@
+<%@page import="model.Nhomsanpham"%>
+<%@page import="dao.NSP_NCC_DAOImpl"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <div class="header-area">
@@ -111,7 +115,10 @@
                     <li><a href="ShopServlet">Shop page</a></li>
                     <li><a href="cart">Giỏ hàng</a></li>
                     <li><a href="checkout.jsp">Thanh toán</a></li>
-                    <li><a href="#">Category điện thoại</a></li>
+                    <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Category điện thoại</a>
+
+                    </li>
                     <li><a href="#" data-toggle="modal" data-target="#contact">Liên hệ</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#other">Khác</a></li>
                 </ul>
@@ -217,5 +224,31 @@
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
+    </div>
+</div>
+
+<%
+    NSP_NCC_DAOImpl dao = new NSP_NCC_DAOImpl();
+    List<Nhomsanpham> category = dao.getListNSP();
+    request.setAttribute("category", category);
+%>
+<div class="collapse" id="collapseExample">
+    <div class="card">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tên hãng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach items="${category}" var="nsp" >
+                    <tr>
+                        <th scope="row">${nsp.maNhomSP}</th>
+                        <td><a href="CategoryServlet?tenNSP=${nsp.tenNhomSP}">${nsp.tenNhomSP}</a></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
     </div>
 </div>

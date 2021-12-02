@@ -1,8 +1,3 @@
-<%@page import="model.Quangcao"%>
-<%@page import="dao.QuangcaoDAOImpl"%>
-<%@page import="java.util.List"%>
-<%@page import="model.Sanpham"%>
-<%@page import="dao.SanphamDAOImpl"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -75,7 +70,7 @@
             <div class="zigzag-bottom"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#return">
+                    <div class="col-md-3 col-sm-6">
                         <div class="single-promo promo1">
                             <i class="fa fa-refresh"></i>
                             <p>Đổi trả trong 30 ngày</p>
@@ -87,13 +82,13 @@
                             <p>Vận chuyển</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#pay">
+                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#thanhtoan">
                         <div class="single-promo promo3">
                             <i class="fa fa-lock"></i>
                             <p>Mua sắm an toàn</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#new">
+                    <div class="col-md-3 col-sm-6">
                         <div class="single-promo promo4">
                             <i class="fa fa-gift"></i>
                             <p>Sản phẩm mới</p>
@@ -317,24 +312,100 @@
         </div> <!-- End product widget area -->
         <jsp:include page="footer.jsp" flush="true"></jsp:include>
 
-        <!-- Latest jQuery form server -->
-        <script src="https://code.jquery.com/jquery.min.js"></script>
+            <!-- Latest jQuery form server -->
+            <script src="https://code.jquery.com/jquery.min.js"></script>
 
-        <!-- Bootstrap JS form CDN -->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <!-- Bootstrap JS form CDN -->
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-        <!-- jQuery sticky menu -->
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
+            <!-- jQuery sticky menu -->
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.sticky.js"></script>
 
-        <!-- jQuery easing -->
-        <script src="js/jquery.easing.1.3.min.js"></script>
+            <!-- jQuery easing -->
+            <script src="js/jquery.easing.1.3.min.js"></script>
 
-        <!-- Main Script -->
-        <script src="js/main.js"></script>
+            <!-- Main Script -->
+            <script src="js/main.js"></script>
 
-        <!-- Slider -->
-        <script type="text/javascript" src="js/bxslider.min.js"></script>
-        <script type="text/javascript" src="js/script.slider.js"></script>
-    </body>
-</html>
+            <!-- Slider -->
+            <script type="text/javascript" src="js/bxslider.min.js"></script>
+            <script type="text/javascript" src="js/script.slider.js"></script>
+        </body>
+    </html>
+
+    <!-- Modal -->
+    <div class="modal fade" id="vanchuyen" tabindex="-1" aria-labelledby="vanchuyen" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="vanchuyen">Các loại hình vận chuyển</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Hãng vận chuyển</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Mô tả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${vanchuyen}" var="vch" >
+                            <tr>
+                                <td>${vch.tenVC}</td>
+                                <td>${vch.gia}</td>
+                                <td>${vch.moTa}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="thanhtoan" tabindex="-1" aria-labelledby="thanhtoan" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="thanhtoan">Webiste chấp nhận các hình thức thanh toán</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Loại thanh toán</th>
+                                <th scope="col">Mô tả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${thanhtoan}" var="th" >
+                                <tr>
+                                    <td>${th.tenTT}</td>
+                                    <td>${th.moTa}</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+
+
+

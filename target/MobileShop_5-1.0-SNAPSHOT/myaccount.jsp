@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html lang = "vi">
     <head>
-       <jsp:include page="head.jsp" flush="true"></jsp:include>
-    </head>
-    <body>
-        <header>
+        <jsp:include page="head.jsp" flush="true"></jsp:include>
+        </head>
+        <body>
+            <header>
             <jsp:include page="header.jsp" flush="true"></jsp:include>
             </header>
 
@@ -19,9 +19,8 @@
             String username = request.getParameter("username");
             KhachhangDAOImpl khDAO = new KhachhangDAOImpl();
             Khachhang khachhang = khDAO.getKH(username);
-            request.setAttribute("kh", khachhang);
         %>
-
+ 
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -63,6 +62,9 @@
                                 <input type="email" value="${kh.email}" id="email" name="email" class="form-control">
                             </div>
 
+                            <div class="form-group">
+                                <input type="hidden" value="${kh.maKH}" id="tenTK" name="maKHTK" class="form-control">
+                            </div>
                             <button type="submit" class="btn btn-primary">Lưu lại</button>      
                         </form>                     
                     </div>

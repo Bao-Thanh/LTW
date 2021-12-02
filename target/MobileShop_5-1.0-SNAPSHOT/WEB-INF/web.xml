@@ -52,15 +52,19 @@
     </servlet>
     <servlet>
         <servlet-name>LogoutadminServlet</servlet-name>
-        <servlet-class>contrroller.LogoutadminServlet</servlet-class>
+        <servlet-class>controller.LogoutadminServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchCartServlet</servlet-name>
-        <servlet-class>contrroller.SearchCartServlet</servlet-class>
+        <servlet-class>controller.SearchCartServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CartServlet</servlet-name>
-        <servlet-class>contrroller.CartServlet</servlet-class>
+        <servlet-class>controller.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-class>controller.CategoryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>taikhoan</servlet-name>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryServlet</servlet-name>
+        <url-pattern>/CategoryServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

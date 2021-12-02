@@ -14,5 +14,5 @@ public interface NSP_NCC_DAO {
     public List<Nhacungcap> getListNCC();
     
     public List<Nhomsanpham> getListNSP();
-    
+     
 }

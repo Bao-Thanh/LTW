@@ -5,7 +5,8 @@
  */
 package controller;
 
-import dao.NSP_NCC_DAOImpl;
+import dao.SanphamDAO;
+import dao.SanphamDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -13,14 +14,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Nhacungcap;
-import model.Nhomsanpham;
+import model.Sanpham;
 
 /**
  *
- * @author admin
+ * @author PhucNguyen
  */
-public class NSP_NCCADServlet extends HttpServlet {
+public class SearchCartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,17 +33,16 @@ public class NSP_NCCADServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         response.setContentType("text/html;charset=UTF-8");
+        String txtSearch = request.getParameter("txt");
 
-        NSP_NCC_DAOImpl dao = new NSP_NCC_DAOImpl();
-        List<Nhacungcap> ncc = dao.getListNCC();
-        List<Nhomsanpham> nsp = dao.getListNSP();
-
-        request.setAttribute("listncc", ncc);
-        request.setAttribute("listnsp", nsp);
-
-        request.getRequestDispatcher("admin/nspandncc.jsp").forward(request, response);
+        SanphamDAO dao = new SanphamDAOImpl();
+        List<Sanpham> list = dao.searchByName(txtSearch);
+        
+              
+        request.setAttribute("listspcart", list);
+        request.setAttribute("txtS", txtSearch);      
+        request.getRequestDispatcher("cart.jsp").forward(request, response);     
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
