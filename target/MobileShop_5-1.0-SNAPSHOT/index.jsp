@@ -144,14 +144,14 @@
                     <div class="col-md-12">
                         <div class="brand-wrapper">
                             <div class="brand-list">
-                                <img src="img/brand1.png" alt="">
-                                <img src="img/brand2.png" alt="">
-                                <img src="img/brand3.png" alt="">
-                                <img src="img/brand4.png" alt="">
-                                <img src="img/brand5.png" alt="">
-                                <img src="img/brand6.png" alt="">
-                                <img src="img/brand1.png" alt="">
-                                <img src="img/brand2.png" alt="">                            
+                                <a href="CategoryServlet?tenNSP=Nokia"><img src="img/brand1.png" alt=""></a>
+                                <a href="CategoryServlet?tenNSP=Canon"><img src="img/brand2.png" alt=""></a>
+                                <a href="CategoryServlet?tenNSP=SamSung"><img src="img/brand3.png" alt=""></a>
+                                <a href="CategoryServlet?tenNSP=Apple"><img src="img/brand4.png" alt=""></a>
+                                <a href="CategoryServlet?tenNSP=HTC"><img src="img/brand5.png" alt=""></a>
+                                <a href="CategoryServlet?tenNSP=LG"><img src="img/brand6.png" alt=""></a>
+<!--                                <img src="img/brand1.png" alt="">
+                                <img src="img/brand2.png" alt="">                            -->
                             </div>
                         </div>
                     </div>
