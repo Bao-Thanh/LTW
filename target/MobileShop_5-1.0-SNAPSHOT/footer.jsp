@@ -25,9 +25,9 @@
                     <h2 class="footer-wid-title">Thông tin của bạn </h2>
                     <ul>
                         <li><a href="myaccount.jsp"><i class="fa fa-user"></i>Tài khoản</a></li>
-                        <li><a href="favorite.jsp"><i class="fa fa-heart"></i> Yêu thích</a></li>
+                        <li><a href="baotri.jsp"><i class="fa fa-heart"></i> Yêu thích</a></li>
                         <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng</a></li>
-                        <li><a href="history.jsp"><i class="fa fa-user"></i> Lịch sử</a></li>
+                        <li><a href="baotri.jsp"><i class="fa fa-user"></i> Lịch sử</a></li>
                     </ul>                        
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="footer-newsletter">
                     <h2 class="footer-wid-title">Nhóm 9</h2>
-                    <p>Nếu bạn có vấn để có thể liên lạc với chung tôi qua<a href="https://https://www.facebook.com/lebaothanh.nguyen.73/" target="_blank"> facebook </a> </p>
+                    <p>Nếu bạn có vấn để có thể liên lạc với chúng tôi qua<a href="https://https://www.facebook.com/lebaothanh.nguyen.73/" target="_blank"> facebook </a> </p>
                     <div class="newsletter-form">
 
                     </div>

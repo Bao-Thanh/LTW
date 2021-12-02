@@ -29,9 +29,9 @@
                                 }
                             %>
                         <li><a href="myaccount.jsp"><i class="fa fa-user"></i>Tài khoản</a></li>
-                        <li><a href="favorite.jsp"><i class="fa fa-heart"></i> Yêu thích</a></li>
+                        <li><a href="baotri.jsp"><i class="fa fa-heart"></i> Yêu thích</a></li>
                         <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng</a></li>
-                        <li><a href="history.jsp"><i class="fa fa-user"></i> Lịch sử</a></li>
+                        <li><a href="baotri.jsp"><i class="fa fa-user"></i> Lịch sử</a></li>
                         <li><a href="LogoutServlet">Đăng xuất</a></li>
                     </ul>
                 </div>
