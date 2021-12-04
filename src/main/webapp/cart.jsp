@@ -76,6 +76,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <c:set var="total" value="${0}"/>
 
                                         <c:forEach items="${update}" var="sp">
                                             <tr class="cart_item">
@@ -111,6 +112,7 @@
 
                                                 <td class="product-subtotal">
                                                     <span class="amount" >$${sp.total}</span> 
+                                                    <c:set var="total" value="${total + sp.total}" />
                                                 </td>
 
                                             </tr>
@@ -178,7 +180,7 @@
                                             <tbody>
                                                 <tr class="cart-subtotal">
                                                     <th>Cart Subtotal</th>
-                                                    <td><span class="amount"></span></td>
+                                                    <td><span class="amount">${total}</span></td>
                                                 </tr>
 
                                                 <tr class="shipping">
