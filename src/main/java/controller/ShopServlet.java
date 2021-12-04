@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Sanpham;
 
 /**
@@ -34,8 +35,21 @@ public class ShopServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String page = request.getParameter("page");
+        HttpSession session = request.getSession();
+
         SanphamDAO dao = new SanphamDAOImpl();
         List<Sanpham> sanpham = dao.getList();
+
+        if (Integer.parseInt(page) == 1) {
+            session.setAttribute("page", 1);
+        } else {
+            for (int i = 2; i <= 5; i++) {
+                if (Integer.parseInt(page) == i) {
+                    session.setAttribute("page", i + 7);
+                }
+            }
+        }
 
         request.setAttribute("listsp", sanpham);
 

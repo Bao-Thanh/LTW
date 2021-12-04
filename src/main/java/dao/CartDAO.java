@@ -53,7 +53,6 @@ public class CartDAO {
 
         } catch (NumberFormatException nfe) {
             System.out.println("Error while parsing from String to primitive types: " + nfe.getMessage());
-            nfe.printStackTrace();
         }
     }
 }

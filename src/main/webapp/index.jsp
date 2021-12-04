@@ -48,7 +48,7 @@
                 <ul class="" id="bxslider-home4">
                     <c:forEach items="${quangcao}" var="qc" >
                         <li>
-                            <img src="${qc.anh}" alt="">
+                            <a href="ShopServlet?page=1"><img src="${qc.anh}" alt=""></a> 
                             <div class="caption-group">
                                 <%-- <h2 class="caption title">
                                     <span class="primary"> <strong>${qc.tenQC}</strong></span>
@@ -57,7 +57,7 @@
                                 <%--<h4 class="caption subtitle">Giá sốc: ${qc.gia - 10}
                                     <del>${qc.gia}</del>
                                 </h4>--%>
-                                <a class="caption button-radius" href="ShopServlet"><span class="icon"></span>Shop now</a>
+<!--                                <a class="caption button-radius" href="ShopServlet"><span class="icon"></span>Shop now</a>-->
                             </div>
                         </li>
                     </c:forEach>
@@ -165,7 +165,7 @@
                     <div class="col-md-4">
                         <div class="single-product-widget">
                             <h2 class="product-wid-title">Top Sellers</h2>
-                            <a href="ShopServlet" class="wid-view-more">View All</a>
+                            <a href="ShopServlet?page=1" class="wid-view-more">View All</a>
                             <c:forEach items="${topsell}" var="top">
                                 <div class="single-wid-product">
                                     <a href="singleproduct?maSP=${top.maSP}"><img src="${top.anh}" alt="" class="product-thumb"></a>
@@ -188,7 +188,7 @@
                     <div class="col-md-4">
                         <div class="single-product-widget">
                             <h2 class="product-wid-title">Recently Viewed</h2>
-                            <a href="ShopServlet" class="wid-view-more">View All</a>
+                            <a href="ShopServlet?page=1" class="wid-view-more">View All</a>
                             <c:forEach items="${recentview}" var="rc">
                                 <div class="single-wid-product">
                                     <a href="singleproduct?maSP=${rc.maSP}"><img src="${rc.anh}" alt="" class="product-thumb"></a>
@@ -210,7 +210,7 @@
                     <div class="col-md-4">
                         <div class="single-product-widget">
                             <h2 class="product-wid-title">Top New</h2>
-                            <a href="ShopServlet" class="wid-view-more">View All</a>
+                            <a href="ShopServlet?page=1" class="wid-view-more">View All</a>
                             <c:forEach items="${topnew}" var="topnew">
                                 <div class="single-wid-product">
                                     <a href="singleproduct?maSP=${topnew.maSP}"><img src="${topnew.anh}" alt="" class="product-thumb"></a>

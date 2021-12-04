@@ -74,14 +74,13 @@
 <!--                                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
                                            href="cart?maSP=${nsph.maSP}">Add to cart</a>   -->
                                     </form>	
-
                                 </div>                       
                             </div>
                         </div>
                     </c:forEach>
                 </div>
 
-                <div class="row">
+<!--                <div class="row">
                     <div class="col-md-12">
                         <div class="product-pagination text-center">
                             <nav>
@@ -105,7 +104,7 @@
                             </nav>                        
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
 

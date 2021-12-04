@@ -112,7 +112,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="SanphamServlet">Trang chủ</a></li>
-                    <li><a href="ShopServlet">Shop page</a></li>
+                    <li><a href="ShopServlet?page=1">Shop page</a></li>
                     <li><a href="cart.jsp">Giỏ hàng</a></li>
                     <li><a href="checkout.jsp">Thanh toán</a></li>
                     <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
