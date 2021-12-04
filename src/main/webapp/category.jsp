@@ -55,22 +55,29 @@
                     <div class="row">
                         <h2 class="section-title">Danh sách sản phẩm</h2>
                     <c:forEach items="${listnsph}" var="nsph" >                       
-                            <div class="col-md-3 col-sm-6">
-                                <div class="single-shop-product">
-                                    <div class="product-upper">
-                                        <img src="${nsph.anh}" alt="" name="anh">
-                                    </div>
-                                    <h2><a href="singleproduct?maSP=${nsph.maSP}" name="tensp">${nsph.tenSP}</a></h2>
-                                    <div class="product-carousel-price">
-                                        <ins name="gia">$${nsph.gia}</ins> <del></del>
-                                    </div>  
-
-                                    <div class="product-option-shop">                                   
-                                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="cart?&action=buy&maSP=${o.maSP}"
-                                           >Add to cart</a>                                       
-                                    </div>                       
+                           <div class="col-md-3 col-sm-6">
+                            <div class="single-shop-product">
+                                <div class="product-upper">
+                                    <img src="${nsph.anh}" alt="" name="anh">
                                 </div>
+                                <h2><a href="singleproduct?maSP=${nsph.maSP}" name="tensp">${nsph.tenSP}</a></h2>
+                                <div class="product-carousel-price">
+                                    <ins name="gia">$${o.gia}</ins> <del></del>
+                                </div>  
+
+                                <div class="product-option-shop"> 
+                                    <form action="cart" method="post">
+                                        <input type="text" min="1" value="1" name="soluong" size="2">
+                                        <input type="hidden" value="setCart" name="command"/>
+                                        <input type="hidden" value="${nsph.maSP}" name="maSP"/>
+                                        <input type="submit" value="Thêm vào giỏ hàng">
+<!--                                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
+                                           href="cart?maSP=${nsph.maSP}">Add to cart</a>   -->
+                                    </form>	
+
+                                </div>                       
                             </div>
+                        </div>
                     </c:forEach>
                 </div>
 
