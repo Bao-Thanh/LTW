@@ -113,16 +113,7 @@ public class SanphamDAOImpl implements SanphamDAO {
         return sp;
     }
 
-    public static void main(String[] args) {
-
-        SanphamDAOImpl sp = new SanphamDAOImpl();
-        List<Sanpham> ls = sp.getSanphamByIDmaNhomSP(2);
-        if (ls == null) {
-            System.out.println("khong co du lieu");
-        } else {
-            System.out.println(ls);
-        }
-    }
+    
 
     @Override
     public void updateSP(Sanpham sp) {
@@ -137,6 +128,29 @@ public class SanphamDAOImpl implements SanphamDAO {
             trans.rollback();
         } finally {
             em.close();
+        }
+    }
+
+    @Override
+    public List<Sanpham> getSanphamByPrice15() {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String query = "Select t from Sanpham as t where t.gia >= 16.9 and t.gia <=18";
+        TypedQuery<Sanpham> list = em.createQuery(query, Sanpham.class);
+        List<Sanpham> sp = list.getResultList();
+        return sp;
+    }
+
+
+    
+    
+    public static void main(String[] args) {
+
+        SanphamDAOImpl sp = new SanphamDAOImpl();
+        List<Sanpham> ls = sp.getSanphamByPrice15();
+        if (ls == null) {
+            System.out.println("khong co du lieu");
+        } else {
+            System.out.println(ls);
         }
     }
 }

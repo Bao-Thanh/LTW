@@ -33,6 +33,11 @@ public interface SanphamDAO {
     //lấy sản phẩm có giá trên $30
     public List<Sanpham> getSanphamByPrice();
     
+    //lấy những sản phẩm có giá dưới 15
+    public List<Sanpham> getSanphamByPrice15();
+    
+ 
+    
     public void updateSP (Sanpham sp);
     
     

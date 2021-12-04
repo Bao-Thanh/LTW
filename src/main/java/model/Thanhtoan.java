@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author PhucNguyen
  */
 @Entity
-@Table(name = "thanhtoan", catalog = "shopping", schema = "")
+@Table(name = "thanhtoan")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Thanhtoan.findAll", query = "SELECT t FROM Thanhtoan t"),
@@ -123,7 +123,7 @@ public class Thanhtoan implements Serializable {
 
     @Override
     public String toString() {
-        return "nodel.Thanhtoan[ maTT=" + maTT + " ]";
+        return "model.Thanhtoan[ maTT=" + maTT + " ]";
     }
     
 }

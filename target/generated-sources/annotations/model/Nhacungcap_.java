@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import model.Sanpham;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-11-30T22:13:55")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-12-04T18:43:21")
 @StaticMetamodel(Nhacungcap.class)
 public class Nhacungcap_ { 
 

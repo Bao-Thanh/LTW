@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author PhucNguyen
  */
 @Entity
-@Table(name = "sanpham", catalog = "shopping", schema = "")
+@Table(name = "sanpham")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Sanpham.findAll", query = "SELECT s FROM Sanpham s"),
@@ -98,7 +98,6 @@ public class Sanpham implements Serializable {
         this.moTa = moTa;
         this.thuongHieu = thuongHieu;
     }
-    
     public Sanpham(Integer maSP) {
         this.maSP = maSP;
     }
@@ -249,8 +248,7 @@ public class Sanpham implements Serializable {
 
     @Override
     public String toString() {
-        return "Sanpham{" + "maSP=" + maSP + ", tenSP=" + tenSP + ", anh=" + anh + ", gia=" + gia + ", mota=" + moTa + ", trangthai=" + trangThai
-                +"MaNhomSP" +maNhomSP +"ThuongHieu" + thuongHieu;
+        return "model.Sanpham[ maSP=" + maSP + " ]";
     }
     
 }

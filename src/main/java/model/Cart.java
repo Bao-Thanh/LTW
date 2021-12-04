@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author PhucNguyen
  */
 @Entity
-@Table(name = "cart", catalog = "shopping", schema = "")
+@Table(name = "cart")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Cart.findAll", query = "SELECT c FROM Cart c"),
@@ -46,11 +46,6 @@ public class Cart implements Serializable {
     public Cart() {
     }
 
-     public Cart(int maSP, int quantity) {
-         this.maSP = maSP;
-         this.quantity = quantity;
-    }
-    
     public Cart(Integer maSP) {
         this.maSP = maSP;
     }
@@ -78,6 +73,11 @@ public class Cart implements Serializable {
     public void setSanpham(Sanpham sanpham) {
         this.sanpham = sanpham;
     }
+    
+    public double getTotal() {
+        double total = quantity * sanpham.getGia();
+        return total;
+    }
 
     @Override
     public int hashCode() {
@@ -101,7 +101,7 @@ public class Cart implements Serializable {
 
     @Override
     public String toString() {
-        return "MaSP" + maSP + "Quantity" + quantity;
+        return "model.Cart[ maSP=" + maSP + " ]";
     }
     
 }

@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author PhucNguyen
  */
 @Entity
-@Table(name = "khachhang", catalog = "shopping", schema = "")
+@Table(name = "khachhang")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Khachhang.findAll", query = "SELECT k FROM Khachhang k"),
@@ -77,7 +77,6 @@ public class Khachhang implements Serializable {
     public Khachhang() {
     }
 
-    
     public Khachhang(String tenKH, String tenTK, String matKhau,
             String diaChi, String sdt, String email) {
         this.tenKH = tenKH;
@@ -87,12 +86,10 @@ public class Khachhang implements Serializable {
         this.sdt = sdt;
         this.email = email;
     }
-    
     public Khachhang(Integer maKH) {
         this.maKH = maKH;
     }
 
-    
     public Integer getMaKH() {
         return maKH;
     }
@@ -206,7 +203,7 @@ public class Khachhang implements Serializable {
 
     @Override
     public String toString() {
-        return "nodel.Khachhang[ maKH=" + maKH + " ]";
+        return "model.Khachhang[ maKH=" + maKH + " ]";
     }
     
 }

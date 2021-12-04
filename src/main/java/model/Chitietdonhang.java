@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author PhucNguyen
  */
 @Entity
-@Table(name = "chitietdonhang", catalog = "shopping", schema = "")
+@Table(name = "chitietdonhang")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Chitietdonhang.findAll", query = "SELECT c FROM Chitietdonhang c"),
@@ -131,7 +131,7 @@ public class Chitietdonhang implements Serializable {
 
     @Override
     public String toString() {
-        return "nodel.Chitietdonhang[ maCTDH=" + maCTDH + " ]";
+        return "model.Chitietdonhang[ maCTDH=" + maCTDH + " ]";
     }
     
 }

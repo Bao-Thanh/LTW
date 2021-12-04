@@ -52,11 +52,24 @@ public class SanphamServlet extends HttpServlet {
         ThanhtoanDAOImpl thdao = new ThanhtoanDAOImpl();
         List<Thanhtoan> thanhtoan = thdao.getList();
 
+        //top sell
+        SanphamDAOImpl daosp = new SanphamDAOImpl();
+        List<Sanpham> lstopsell = daosp.getSanphamByPrice15();
+        
+        //recently view
+        List<Sanpham> recentview = daosp.searchByName("Samsung Galaxy Note");
+        
+        //Top new
+        List<Sanpham> topnew = daosp.searchByName("Iphone 11");
+        
         request.setAttribute("sanpham", sanpham);
         request.setAttribute("quangcao", qc);
         request.setAttribute("vanchuyen", vanchuyen);
         request.setAttribute("thanhtoan", thanhtoan);
-
+        request.setAttribute("topsell", lstopsell);
+        request.setAttribute("recentview", recentview);
+        request.setAttribute("topnew", topnew);
+        
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
