@@ -6,5 +6,7 @@ import model.Vanchuyen;
 public interface VanchuyenDAO {
 
     public List<Vanchuyen> getList();
+    
+    public Vanchuyen getVanchuyen(int id);
 
 }

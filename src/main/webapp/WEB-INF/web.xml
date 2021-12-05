@@ -66,6 +66,10 @@
         <servlet-name>CategoryServlet</servlet-name>
         <servlet-class>controller.CategoryServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PhantrangServlet</servlet-name>
+        <servlet-class>controller.PhantrangServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>taikhoan</servlet-name>
         <url-pattern>/taikhoan</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>KhuyenmaiServlet</servlet-name>
         <url-pattern>/KhuyenmaiServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PhantrangServlet</servlet-name>
+        <url-pattern>/PhantrangServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

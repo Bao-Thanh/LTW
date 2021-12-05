@@ -14,7 +14,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.Sanpham;
 
 /**
@@ -34,26 +33,42 @@ public class ShopServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String page = request.getParameter("page");
-        HttpSession session = request.getSession();
-
+        response.setContentType("text/html;charset=UTF-8");      
         SanphamDAO dao = new SanphamDAOImpl();
+        String index = request.getParameter("index");
+             
+        if(index == null)
+        {
+            index = "1";
+        }
+        
+        int id = Integer.parseInt(index);
+        
         List<Sanpham> sanpham = dao.getList();
+        List<Sanpham> listsp = dao.getSPPhanTrang(id);
 
-        if (Integer.parseInt(page) == 1) {
-            session.setAttribute("page", 1);
-        } else {
-            for (int i = 2; i <= 5; i++) {
-                if (Integer.parseInt(page) == i) {
-                    session.setAttribute("page", i + 7);
-                }
-            }
+        int total = getTotalSP(sanpham);
+
+        int endpage = total / 8;
+        
+        if(total % 8 != 0)
+        {
+            endpage++;
         }
 
-        request.setAttribute("listsp", sanpham);
+        
+        request.setAttribute("endP", endpage);
+        request.setAttribute("listsp", listsp);
 
         request.getRequestDispatcher("shop.jsp").forward(request, response);
+    }
+    
+    public int getTotalSP(List<Sanpham> listSP) {
+        int total = 0;
+        for (Sanpham item : listSP) {
+            total += 1;
+        }
+        return total;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

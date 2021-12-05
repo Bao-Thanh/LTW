@@ -7,6 +7,7 @@ package controller;
 
 import dao.KhuyenmaiDAOImpl;
 import dao.SanphamDAOImpl;
+import dao.VanchuyenDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpSession;
 import model.Cart;
 import model.Khuyenmai;
 import model.Sanpham;
+import model.Vanchuyen;
 
 /**
  *
@@ -42,6 +44,7 @@ public class CartServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         SanphamDAOImpl dao = new SanphamDAOImpl();
+        VanchuyenDAOImpl daovc = new VanchuyenDAOImpl();
 
         String command = request.getParameter("command");
         String id = request.getParameter("maSP");
@@ -82,9 +85,10 @@ public class CartServlet extends HttpServlet {
                         HttpSession session = request.getSession();
 
                         List<Sanpham> list = dao.getSanphamByPrice();
-                        
-                        session.setAttribute("listspcart", list);
-                        
+                        Vanchuyen vc = daovc.getVanchuyen(1);
+
+                        session.setAttribute("listspcart", list);                       
+                        session.setAttribute("vanchuyen", vc);
                         session.setAttribute("update", items);
                         response.sendRedirect("cart.jsp");
                     }
@@ -98,7 +102,7 @@ public class CartServlet extends HttpServlet {
         for (Cart item : items) {
             if (item.getSanpham().getMaSP() == p.getMaSP()) {
                 item.setQuantity(item.getQuantity() + 1);
-                
+
                 return "update";
             }
         }
@@ -143,8 +147,6 @@ public class CartServlet extends HttpServlet {
         }
         return "update";
     }
-
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

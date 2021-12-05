@@ -113,8 +113,6 @@ public class SanphamDAOImpl implements SanphamDAO {
         return sp;
     }
 
-    
-
     @Override
     public void updateSP(Sanpham sp) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -140,17 +138,34 @@ public class SanphamDAOImpl implements SanphamDAO {
         return sp;
     }
 
+    @Override
+    public List<Sanpham> getSPPhanTrang(int index) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String query = "Select t from Sanpham t where t.maSP > :id ";
+        TypedQuery<Sanpham> list = em.createQuery(query, Sanpham.class);
+        int t = (index-1)*8;
+        list.setParameter("id", t);
+        List<Sanpham> sp = list.setMaxResults(8).getResultList();
+        return sp;
+    }
 
-    
-    
     public static void main(String[] args) {
 
         SanphamDAOImpl sp = new SanphamDAOImpl();
-        List<Sanpham> ls = sp.getSanphamByPrice15();
-        if (ls == null) {
-            System.out.println("khong co du lieu");
-        } else {
-            System.out.println(ls);
-        }
+        List<Sanpham> ls = sp.getSPPhanTrang(2);
+        System.out.println(ls);
+
     }
+
+    @Override
+    public List<Sanpham> getSPPhanTrangCategory(int index) {
+         EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String query = "Select t from Sanpham t where t.maSP > :id ";
+        TypedQuery<Sanpham> list = em.createQuery(query, Sanpham.class);
+        int t = (index-1)*4;
+        list.setParameter("id", t);
+        List<Sanpham> sp = list.setMaxResults(4).getResultList();
+        return sp;
+    }
+
 }

@@ -31,4 +31,23 @@ public class VanchuyenDAOImpl implements VanchuyenDAO {
         return vch;
 
     }
+
+    
+
+    @Override
+    public Vanchuyen getVanchuyen(int id) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT s FROM Vanchuyen s where s.maVC = :id";
+        TypedQuery<Vanchuyen> q = em.createQuery(qString, Vanchuyen.class);
+        q.setParameter("id", id);
+        Vanchuyen sp = q.getSingleResult();
+        return sp;
+    }
+    
+    public static void main(String[] args) {
+        VanchuyenDAOImpl dAO = new VanchuyenDAOImpl();
+        Vanchuyen sp = dAO.getVanchuyen(1);
+
+        System.out.println(sp);
+    }
 }

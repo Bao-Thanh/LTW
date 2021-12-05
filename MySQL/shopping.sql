@@ -1,4 +1,4 @@
-﻿create database shopping;
+create database shopping;
 
 
 drop database shopping;
@@ -186,6 +186,21 @@ RAM: 4 GB, ROM: 512 GB
 Camera: 3 camera 12 MP, Selfie: 12 MP');
 Update QuangCao set Anh = 'https://tintuc.dienthoaigiakho.vn/wp-content/uploads/2020/12/12-12-promax.jpg' where MaQC = 1;
 
+insert into QuangCao(MaQC, TenQC, Anh, Gia, NhaSanXuat, MoTa) values (3, 'SamSung Event','https://static.accesstrade.vn/publisher/www/files/img_promo/offer/img/samsung/All.png',
+ 27000000, N'Mỹ', 
+N'Màn hình: 6.5, Super Retina XDR
+HĐH: iOS 13
+CPU: Apple A13 Bionic 6 nhân
+RAM: 4 GB, ROM: 512 GB
+Camera: 3 camera 12 MP, Selfie: 12 MP');
+
+insert into QuangCao(MaQC, TenQC, Anh, Gia, NhaSanXuat, MoTa) values (4, 'Oppo Event','https://i.ytimg.com/vi/HdQRHGEF0kg/maxresdefault.jpg',
+ 27000000, N'Trung Quốc', 
+N'Màn hình: 6.5", Full HD+
+HĐH: Android 9.0 (Pie)
+CPU: Snapdragon 730G 8 nhân
+RAM: 8 GB, ROM: 256 GB
+Camera: Chính 48 MP & Phụ 13 MP, 8 MP, 2 MP, Selfie: 16 MP');
 
 create table QuanTri(
 MaQT int primary key AUTO_INCREMENT,
@@ -306,6 +321,11 @@ CPU: Exynos 9820 8 nhân 64-bit
 RAM: 8 GB, ROM: 512 GB
 Camera: Chính 12 MP & Phụ 12 MP, 16 MP, Selfie: Chính 10 MP & Phụ 8 MP',2,'SamSung');
 
+update Sanpham
+set TenSP = N'Samsung Galaxy S9+'
+where MaSP= 11;
+
+select * from Sanpham where MaSP =11;
 
 insert into SanPham(MaSP, TenSP, Anh, Gia, MaNCC, MoTa, MaNhomSP, ThuongHieu) values(12, N'Samsung Galaxy Note 10+',
 'https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-white-600x600.jpg', 26.990,2,
@@ -387,7 +407,9 @@ RAM: 6 GB, ROM: 128 GB
 Camera: Chính 48 MP & Phụ 5 MP, Selfie: 16 MP',3,'Oppo');
 
 
-Select * from Sanpham where MaSP = 1;
+Select count(*) from Sanpham;
+
+select * from Sanpham where MaSP >0;
 
 create table ThanhToan(
 MaTT int primary key AUTO_INCREMENT,
@@ -427,10 +449,22 @@ quantity int
 
 
 
+create table KhuyenMai(
+MaKM int primary key  not null,
+GiaTri double
+);
+
+insert into KhuyenMai values(1, 10);
+insert into KhuyenMai values(2, 5);
+insert into KhuyenMai values(3, 7);
+
+
 
 alter table Cart
 add foreign key(MaSP) references Sanpham(MaSP);
 
+alter table Cart
+add column totalquantity int;
 
 
 
@@ -484,6 +518,7 @@ add foreign key(MaKH) references KhachHang(MaKH);
 
 alter table UaThich
 add foreign key(MaSP) references SanPham(MaSP);
+
 
 
 

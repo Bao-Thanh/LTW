@@ -248,7 +248,8 @@ public class Sanpham implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Sanpham[ maSP=" + maSP + " ]";
+        return "Sanpham{" + "maSP=" + maSP + ", tenSP=" + tenSP + ", anh=" + anh + ", gia=" + gia + ", mota=" + moTa + ", trangthai=" + trangThai
+                +"MaNhomSP" +maNhomSP +"ThuongHieu" + thuongHieu;
     }
     
 }

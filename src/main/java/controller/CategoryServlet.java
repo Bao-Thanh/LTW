@@ -46,6 +46,14 @@ public class CategoryServlet extends HttpServlet {
         request.getRequestDispatcher("category.jsp").forward(request, response);
     }
 
+    public int getTotalSP(List<Sanpham> listSP) {
+        int total = 0;
+        for (Sanpham item : listSP) {
+            total += 1;
+        }
+        return total;
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

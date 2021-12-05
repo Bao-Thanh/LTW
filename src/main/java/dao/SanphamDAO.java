@@ -36,7 +36,13 @@ public interface SanphamDAO {
     //lấy những sản phẩm có giá dưới 15
     public List<Sanpham> getSanphamByPrice15();
     
- 
+
+    //lấy sản phẩm theo trang cho shop.jsp
+    public List<Sanpham> getSPPhanTrang(int index);
+    
+    
+    //lấy sản phẩm theo trang cho category.jsp
+    public List<Sanpham> getSPPhanTrangCategory(int index);
     
     public void updateSP (Sanpham sp);
     

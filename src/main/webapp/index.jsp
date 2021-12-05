@@ -48,7 +48,7 @@
                 <ul class="" id="bxslider-home4">
                     <c:forEach items="${quangcao}" var="qc" >
                         <li>
-                            <a href="ShopServlet?page=1"><img src="${qc.anh}" alt=""></a> 
+                            <a class="caption button-radius" href="ShopServlet"><img src="${qc.anh}" alt=""></a> 
                             <div class="caption-group">
                                 <%-- <h2 class="caption title">
                                     <span class="primary"> <strong>${qc.tenQC}</strong></span>
@@ -57,7 +57,7 @@
                                 <%--<h4 class="caption subtitle">Giá sốc: ${qc.gia - 10}
                                     <del>${qc.gia}</del>
                                 </h4>--%>
-<!--                                <a class="caption button-radius" href="ShopServlet"><span class="icon"></span>Shop now</a>-->
+                                <!--                                <a class="caption button-radius" href="ShopServlet"><span class="icon"></span>Shop now</a>-->
                             </div>
                         </li>
                     </c:forEach>
@@ -145,7 +145,7 @@
                     <div class="col-md-12">
                         <div class="brand-wrapper">
                             <div class="brand-list">
-                                <a href="CategoryServlet?tenNSP=Nokia"><img src="img/brand1.jpg" alt=""></a>
+                                <a href="CategoryServlet?tenNSP=Oppo"><img src="img/brand1.jpg" alt=""></a>
                                 <a href="CategoryServlet?tenNSP=SamSung"><img src="img/brand3.jpg" alt=""></a>
                                 <a href="CategoryServlet?tenNSP=Apple"><img src="img/apple.png" alt=""></a>
 
@@ -165,7 +165,7 @@
                     <div class="col-md-4">
                         <div class="single-product-widget">
                             <h2 class="product-wid-title">Top Sellers</h2>
-                            <a href="ShopServlet?page=1" class="wid-view-more">View All</a>
+                            <a href="ShopServlet" class="wid-view-more">View All</a>
                             <c:forEach items="${topsell}" var="top">
                                 <div class="single-wid-product">
                                     <a href="singleproduct?maSP=${top.maSP}"><img src="${top.anh}" alt="" class="product-thumb"></a>
@@ -188,7 +188,7 @@
                     <div class="col-md-4">
                         <div class="single-product-widget">
                             <h2 class="product-wid-title">Recently Viewed</h2>
-                            <a href="ShopServlet?page=1" class="wid-view-more">View All</a>
+                            <a href="ShopServlet" class="wid-view-more">View All</a>
                             <c:forEach items="${recentview}" var="rc">
                                 <div class="single-wid-product">
                                     <a href="singleproduct?maSP=${rc.maSP}"><img src="${rc.anh}" alt="" class="product-thumb"></a>
@@ -210,7 +210,7 @@
                     <div class="col-md-4">
                         <div class="single-product-widget">
                             <h2 class="product-wid-title">Top New</h2>
-                            <a href="ShopServlet?page=1" class="wid-view-more">View All</a>
+                            <a href="ShopServlet" class="wid-view-more">View All</a>
                             <c:forEach items="${topnew}" var="topnew">
                                 <div class="single-wid-product">
                                     <a href="singleproduct?maSP=${topnew.maSP}"><img src="${topnew.anh}" alt="" class="product-thumb"></a>
@@ -291,43 +291,43 @@
             </div>
         </div>
     </div>
+</div>
 
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="thanhtoan" tabindex="-1" aria-labelledby="thanhtoan" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="thanhtoan">Webiste chấp nhận các hình thức thanh toán</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table">
-                        <thead>
+<!-- Modal -->
+<div class="modal fade" id="thanhtoan" tabindex="-1" aria-labelledby="thanhtoan" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="thanhtoan">Webiste chấp nhận các hình thức thanh toán</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Loại thanh toán</th>
+                            <th scope="col">Mô tả</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${thanhtoan}" var="th" >
                             <tr>
-                                <th scope="col">Loại thanh toán</th>
-                                <th scope="col">Mô tả</th>
+                                <td>${th.tenTT}</td>
+                                <td>${th.moTa}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${thanhtoan}" var="th" >
-                                <tr>
-                                    <td>${th.tenTT}</td>
-                                    <td>${th.moTa}</td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
-
+    </div>
+</div>
 
 
 

@@ -135,7 +135,7 @@ public class Vanchuyen implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Vanchuyen[ maVC=" + maVC + " ]";
+        return "MaVC" + maVC + "TenVC" + tenVC + "Gia" +gia + "MoTa" + moTa;
     }
     
 }

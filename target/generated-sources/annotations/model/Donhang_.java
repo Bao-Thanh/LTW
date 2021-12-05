@@ -10,7 +10,7 @@ import model.Khachhang;
 import model.Thanhtoan;
 import model.Vanchuyen;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-12-04T18:43:21")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-12-05T23:58:25")
 @StaticMetamodel(Donhang.class)
 public class Donhang_ { 
 
