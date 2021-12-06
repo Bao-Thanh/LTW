@@ -40,7 +40,7 @@
 
                         <div class="single-sidebar">
                             <h2 class="sidebar-title">Products</h2>
-                            <c:forEach items="${listspcart}" var="lscart">
+                            <c:forEach items="${listsanphamcart}" var="lscart">
                                 <div class="thubmnail-recent">
                                     <img src="${lscart.anh}" class="recent-thumb" alt="">
                                     <h2><a href="singleproduct?maSP=${lscart.maSP}">${lscart.tenSP}</a></h2>
@@ -51,12 +51,12 @@
                             </c:forEach>
                         </div>
 
-<!--                        <div class="single-sidebar">
-                            <h2 class="sidebar-title">Recent Posts</h2>
-                            <ul>
-                                <li><a href="#">Sony Smart TV - 2015</a></li>                               
-                            </ul>
-                        </div>-->
+                        <!--                        <div class="single-sidebar">
+                                                    <h2 class="sidebar-title">Recent Posts</h2>
+                                                    <ul>
+                                                        <li><a href="#">Sony Smart TV - 2015</a></li>                               
+                                                    </ul>
+                                                </div>-->
                     </div>
 
                     <div class="col-md-8">
@@ -112,7 +112,7 @@
 
                                                 <td class="product-subtotal">
                                                     <span class="amount" >$${sp.total}</span> 
-                                                    <c:set var="total" value="${total + sp.total}" />
+                                                    <c:set var="total" value="${(total + sp.total) - khuyenmai.giaTri}" />
                                                 </td>
 
                                             </tr>
@@ -120,21 +120,28 @@
                                         <tr>
 
                                             <td class="actions" colspan="6">
-                                                <div class="coupon">
-                                                    <label for="coupon_code">Coupon:</label>
-                                                    <input type="text" placeholder="Coupon code" id="coupon_code" class="input-text" name="coupon">
-                                                    <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
-                                                       href="KhuyenmaiServlet">Apply Coupon</a>
+                                                <div class="coupon">                                                  
+                                                    <form action="KhuyenmaiServlet" method="post">
+                                                        <label for="coupon_code">Coupon:</label>
+                                                        <input type="text" placeholder="Coupon code" id="coupon_code" class="input-text" name="coupon" value="${khuyenmai.maKM}" size="4">
+                                                        <!--                                                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
+                                                                                                                   href="KhuyenmaiServlet">Apply Coupon</a>-->
+                                                        <input class="add_to_cart_button" type="submit" value="Apply Coupon">
+                                                    </form>
                                                     <!--<input type="submit" value="Apply Coupon" name="applycoupon" class="button">-->
+
                                                 </div>
 
                                                 <!-- <input type="submit" value="Update Cart" name="updatecart" class="button">-->
 
                                                 <!--<input type="submit" value="Checkout" name="checkout" class="checkout-button button alt wc-forward">-->
-                                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
-                                                   href="checkout.jsp">Checkout</a>
-
-
+<!--                                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
+                                                   href="checkout.jsp">Checkout</a>-->
+                                          
+                                                <input type="submit" value="Checkout">
+                                                
+                                                <label class="right" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
+                                                       >Total: $${total} </label>
                                             </td>
 
                                         </tr>
@@ -210,34 +217,34 @@
 
                                     </div>
 
-                                    <form method="post" action="#" class="shipping_calculator">
-                                        <h2><a class="shipping-calculator-button" data-toggle="collapse" href="#calcalute-shipping-wrap"
-                                               aria-expanded="false" aria-controls="calcalute-shipping-wrap">Cart Total</a></h2>
-
-                                        <section id="calcalute-shipping-wrap" class="shipping-calculator-form collapse">
-
-
-                                            <p class="form-row form-row-wide">
-                                                <label>Total: </label>  
-                                                <input type="text" id="calc_shipping_state" name="calc_shipping_state"  value="$${total}" class="input-text"> 
-                                            </p>
-
-
-                                            <p class="form-row form-row-wide">
-                                                <label>Chon hinh thuc van chuyen: </label>
-                                                <select rel="calc_shipping_state" class="country_to_state" id="calc_shipping_country" name="calc_shipping_country">
-
-                                                    <option value="">${vanchuyen.tenVC}</option>
-                                                    <!--                                                        <option value="AX">Speed Method</option>
-                                                                                                            <option value="AF">Go Viet</option>-->
-
-                                                </select>
-                                            </p>
-
-                                            <p><button class="button" value="1" name="calc_shipping" type="submit">Checkout</button></p>
-
-                                        </section>
-                                    </form>
+                                    <!--                                    <form method="post" action="#" class="shipping_calculator">
+                                                                            <h2><a class="shipping-calculator-button" data-toggle="collapse" href="#calcalute-shipping-wrap"
+                                                                                   aria-expanded="false" aria-controls="calcalute-shipping-wrap">Cart Total</a></h2>
+                                    
+                                                                            <section id="calcalute-shipping-wrap" class="shipping-calculator-form collapse">
+                                    
+                                    
+                                                                                <p class="form-row form-row-wide">
+                                                                                    <label>Total: </label>  
+                                                                                    <input type="text" id="calc_shipping_state" name="calc_shipping_state"  value="$${total}" class="input-text"> 
+                                                                                </p>
+                                    
+                                    
+                                                                                <p class="form-row form-row-wide">
+                                                                                    <label>Chon hinh thuc van chuyen: </label>
+                                                                                    <select rel="calc_shipping_state" class="country_to_state" id="calc_shipping_country" name="calc_shipping_country">
+                                    
+                                                                                        <option value="">${vanchuyen.tenVC}</option>
+                                                                                                                                                <option value="AX">Speed Method</option>
+                                                                                                                                                <option value="AF">Go Viet</option>
+                                    
+                                                                                    </select>
+                                                                                </p>
+                                    
+                                                                                <p><button class="button" value="1" name="calc_shipping" type="submit">Checkout</button></p>
+                                    
+                                                                            </section>
+                                                                        </form>-->
                                     <!--                                    <form method="post" action="#" class="shipping_calculator">
                                                                             <h2><a class="shipping-calculator-button" data-toggle="collapse" href="#calcalute-shipping-wrap" aria-expanded="false" aria-controls="calcalute-shipping-wrap">Calculate Shipping</a></h2>
                                     
