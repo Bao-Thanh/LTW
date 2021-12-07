@@ -184,7 +184,11 @@ HĐH: iOS 13
 CPU: Apple A13 Bionic 6 nhân
 RAM: 4 GB, ROM: 512 GB
 Camera: 3 camera 12 MP, Selfie: 12 MP');
-Update QuangCao set Anh = 'https://tintuc.dienthoaigiakho.vn/wp-content/uploads/2020/12/12-12-promax.jpg' where MaQC = 1;
+
+Update QuangCao set TenQC = 'Apple' where MaQC = 1;
+Update QuangCao set TenQC = 'Apple' where MaQC = 2;
+Update QuangCao set TenQC = 'SamSung' where MaQC = 3;
+Update QuangCao set TenQC = 'Oppo' where MaQC = 4;
 
 insert into QuangCao(MaQC, TenQC, Anh, Gia, NhaSanXuat, MoTa) values (3, 'SamSung Event','https://static.accesstrade.vn/publisher/www/files/img_promo/offer/img/samsung/All.png',
  27000000, N'Mỹ', 

@@ -30,7 +30,7 @@ public class CartServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private List<Cart> items = new ArrayList<Cart>();
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -87,7 +87,7 @@ public class CartServlet extends HttpServlet {
                         List<Sanpham> list = dao.getSanphamByPrice();
                         Vanchuyen vc = daovc.getVanchuyen(1);
 
-                        session.setAttribute("listspcart", list);                       
+                        session.setAttribute("listsanphamcart", list);                       
                         session.setAttribute("vanchuyen", vc);
                         session.setAttribute("update", items);
                         response.sendRedirect("cart.jsp");
@@ -124,8 +124,9 @@ public class CartServlet extends HttpServlet {
     }
 
     private String setCart(Sanpham p, int s) {
-        for (int i = 0; i < items.size(); i++) {
-            Cart item = items.get(i);
+//        for (int i = 0; i < items.size(); i++) {
+//            Cart item = items.get(i);
+        for (Cart item : items) {
             if (item.getSanpham().getMaSP() == p.getMaSP()) {
                 item.setQuantity(s);
                 return "update";

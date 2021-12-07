@@ -113,7 +113,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="SanphamServlet">Trang chủ</a></li>
                     <li><a href="ShopServlet">Shop page</a></li>
-                    <li><a href="cart.jsp">Giỏ hàng</a></li>
+                    <li><a href="cartheader">Giỏ hàng</a></li>
                     <li><a href="CheckServlet">Thanh toán</a></li>
                     <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Category điện thoại</a>
