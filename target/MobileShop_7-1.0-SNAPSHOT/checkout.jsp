@@ -830,7 +830,7 @@
                                                     <c:forEach items="${vclist}" var="c">
                                                     <li class="payment_method_bacs">
                                                         <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio" id="payment_method_bacs">
-                                                        <label for="payment_method_bacs">${c.tenVC}: FreeShip </label>
+                                                        <label for="payment_method_bacs">${c.tenVC}: ${c.gia}đ</label>
 <!--                                                        <div class="payment_box payment_method_bacs">
                                                             <p>Nhận hàng rồi mới thanh toán.</p>
                                                         </div>-->

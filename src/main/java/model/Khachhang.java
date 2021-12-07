@@ -45,7 +45,7 @@ public class Khachhang implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "MaKH")
-    private Integer maKH;
+    private int maKH;
     @Size(max = 500)
     @Column(name = "TenKH")
     private String tenKH;
@@ -86,15 +86,15 @@ public class Khachhang implements Serializable {
         this.sdt = sdt;
         this.email = email;
     }
-    public Khachhang(Integer maKH) {
+    public Khachhang(int maKH) {
         this.maKH = maKH;
     }
 
-    public Integer getMaKH() {
+    public int getMaKH() {
         return maKH;
     }
 
-    public void setMaKH(Integer maKH) {
+    public void setMaKH(int maKH) {
         this.maKH = maKH;
     }
 
@@ -181,25 +181,25 @@ public class Khachhang implements Serializable {
         this.uathichCollection = uathichCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (maKH != null ? maKH.hashCode() : 0);
-        return hash;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (maKH != null ? maKH.hashCode() : 0);
+//        return hash;
+//    }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Khachhang)) {
-            return false;
-        }
-        Khachhang other = (Khachhang) object;
-        if ((this.maKH == null && other.maKH != null) || (this.maKH != null && !this.maKH.equals(other.maKH))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Khachhang)) {
+//            return false;
+//        }
+//        Khachhang other = (Khachhang) object;
+//        if ((this.maKH == null && other.maKH != null) || (this.maKH != null && !this.maKH.equals(other.maKH))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {

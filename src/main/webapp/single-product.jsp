@@ -80,8 +80,8 @@
                     <div class="col-md-8">
                         <div class="product-content-right">
                             <div class="product-breadcroumb">
-                                <a href="">Home</a>
-                                <a href="">${singleSP.thuongHieu}</a>
+                                <a href="ShopServlet">Home</a>
+                                <a href="CategoryServlet?tenNSP=${singleSP.thuongHieu}">${singleSP.thuongHieu}</a>
                                 <a href="">${singleSP.tenSP}</a>
                             </div>
 

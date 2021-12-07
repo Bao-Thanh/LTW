@@ -4,10 +4,29 @@
 <!DOCTYPE html>
 <html lang = "vi">
     <head>
-        <jsp:include page="head.jsp" flush="true"></jsp:include>
-        </head>
-        <body>
-            <header>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Shop Page - Nhóm 9 Shop</title>
+
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">F
+    </head>
+    <body>
+        <header>
             <jsp:include page="header.jsp" flush="true"></jsp:include>
             </header>
 
@@ -22,8 +41,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <h3 class="section-title">THÔNG TIN CÁ NHÂN</h3>
-                        <form action="KhachhangServlet" method="post">                      
+                        <p> </p>
+                        <h2 class="section-title">THÔNG TIN CÁ NHÂN</h2>
+                        <form action="KhachhangServlet"  method="POST">                      
                             <li style="color: red"><%=err%></li>
                             <label class="" for="tenKH">Tên của bạn: <abbr title="required" class="required">*</abbr>
                             </label>

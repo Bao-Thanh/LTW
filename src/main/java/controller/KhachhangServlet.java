@@ -7,11 +7,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Khachhang;
 
 /**
  *
@@ -19,13 +17,21 @@ import model.Khachhang;
  */
 public class KhachhangServlet extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     private static final long serialVersionUID = 1L;
     private KhachhangDAOImpl khDAO = new KhachhangDAOImpl();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
         String maKH = request.getParameter("maKH");
         String tenKH = request.getParameter("tenKH");
         String tenTK = request.getParameter("tenTK");
@@ -35,7 +41,7 @@ public class KhachhangServlet extends HttpServlet {
         String email = request.getParameter("email");
 
         String err = "";
-        String url = "/myaccount.jsp";
+        String url = "/KhachhangServlet";
 
         if (matKhau.equals("") || email.equals("") || sdt.equals("") || diaChi.equals("")) {
             err += "Phải nhập đầy đủ thông tin!";
@@ -62,18 +68,18 @@ public class KhachhangServlet extends HttpServlet {
         }
 
         try {
-            if (err.length() == 0) {
+            if (err.length() == 0){
                 khDAO.updateKH(Integer.parseInt(maKH), tenKH, tenTK, matKhau, diaChi, sdt, email);
-                url = "/myaccount.jsp";
-            } else {
-                url = "/index.jsp";
+                url = "/KhachhangServlet";
+            }else{
+                url = "/SanphamServlet";
             }
+            
             RequestDispatcher rd = getServletContext()
                     .getRequestDispatcher(url);
             rd.forward(request, response);
         } catch (IOException | ServletException e) {
-            response.sendRedirect("/index.jsp");
+            response.sendRedirect("SanphamServlet");
         }
     }
-
 }
