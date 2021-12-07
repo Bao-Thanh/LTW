@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="product-bit-title text-center">
-                                <h2>Shop</h2>
+                                <h2>Sản phẩm</h2>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="zigzag-bottom"></div>
                 <div class="container">
                     <div class="row">
-                        <h2 class="section-title">Danh sách sản phẩm</h2>
+                        <!--                        <h2 class="section-title">Danh sách sản phẩm</h2>-->
                     <c:forEach items="${listsp}" var="o" >                       
                         <div class="col-md-3 col-sm-6">
                             <div class="single-shop-product">
@@ -65,12 +65,10 @@
                                     <ins name="gia">$${o.gia}</ins> <del></del>
                                 </div>  
 
-                                <div class="product-option-shop"> 
-
+                                <div class="product-option-shop">
                                     <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
-                                       href="cart?maSP=${o.maSP}&command=setCart&soluong=1">Add to cart</a>   
-
-                                </div>                       
+                                       href="cart?maSP=${o.maSP}&command=setCart&soluong=1">Add to cart</a>
+                                </div>              
                             </div>
                         </div>
                     </c:forEach>
@@ -82,22 +80,37 @@
                             <nav>
                                 <ul class="pagination">
                                     <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
+                                        <c:choose>
+                                            <c:when test="${page == 1}">
+                                                <a href="ShopServlet?page=${page}" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a href="ShopServlet?page=${page - 1}" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </li>
-
                                     <li>
                                         <c:forEach begin="1" end="${endP}" var="o">
-                                            <a href="ShopServlet?index=${o}">${o}</a>
+                                            <a href="ShopServlet?page=${o}">${o}</a>
                                         </c:forEach>
                                     </li>
-
                                     <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
+                                        <c:choose>
+                                            <c:when test="${page == 3}">
+                                                <a href="ShopServlet?page=${page}" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a href="ShopServlet?page=${page + 1}" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </c:otherwise>
+                                        </c:choose>
                                 </ul>
                             </nav>                        
                         </div>

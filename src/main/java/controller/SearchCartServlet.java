@@ -34,18 +34,15 @@ public class SearchCartServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String txtSearch = request.getParameter("txt");
+        String txtSearch = request.getParameter("txt");
 
-            out.println(txtSearch);
-            
-            SanphamDAO dao = new SanphamDAOImpl();
-            List<Sanpham> list = dao.searchByName(txtSearch);
-
-            request.setAttribute("listsanphamcart", list);
-            request.setAttribute("txtS", txtSearch);
-            request.getRequestDispatcher("cart.jsp").forward(request, response);
-        }
+        SanphamDAO dao = new SanphamDAOImpl();
+        List<Sanpham> list = dao.searchByName(txtSearch);
+        
+              
+        request.setAttribute("listspcart", list);
+        request.setAttribute("txtS", txtSearch);      
+        request.getRequestDispatcher("cart.jsp").forward(request, response);     
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

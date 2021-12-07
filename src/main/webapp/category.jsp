@@ -53,7 +53,7 @@
                 <div class="zigzag-bottom"></div>
                 <div class="container">
                     <div class="row">
-                        <h2 class="section-title">Danh sách sản phẩm</h2>
+                        <h2 class="section-title">${tenNSP}</h2>
                     <c:forEach items="${listnsph}" var="nsph" >                       
                         <div class="col-md-3 col-sm-6">
                             <div class="single-shop-product">

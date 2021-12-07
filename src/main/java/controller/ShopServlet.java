@@ -19,6 +19,7 @@ import model.Sanpham;
 /**
  *
  * @author PhucNguyen
+ * @contributors BaoThanh
  */
 public class ShopServlet extends HttpServlet {
 
@@ -33,36 +34,33 @@ public class ShopServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");      
+        response.setContentType("text/html;charset=UTF-8");
         SanphamDAO dao = new SanphamDAOImpl();
-        String index = request.getParameter("index");
-             
-        if(index == null)
-        {
-            index = "1";
+        String page = request.getParameter("page");
+
+        if (page == null) {
+            page = "1";
         }
-        
-        int id = Integer.parseInt(index);
-        
+
+        int id = Integer.parseInt(page);
+
         List<Sanpham> sanpham = dao.getList();
         List<Sanpham> listsp = dao.getSPPhanTrang(id);
 
         int total = getTotalSP(sanpham);
 
         int endpage = total / 8;
-        
-        if(total % 8 != 0)
-        {
+
+        if (total % 8 != 0) {
             endpage++;
         }
 
-        
         request.setAttribute("endP", endpage);
         request.setAttribute("listsp", listsp);
-
+        request.setAttribute("page", page);
         request.getRequestDispatcher("shop.jsp").forward(request, response);
     }
-    
+
     public int getTotalSP(List<Sanpham> listSP) {
         int total = 0;
         for (Sanpham item : listSP) {

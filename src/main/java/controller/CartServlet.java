@@ -30,7 +30,7 @@ public class CartServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private List<Cart> items = new ArrayList<Cart>();
-
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

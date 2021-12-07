@@ -14,17 +14,16 @@
                     <p>Nhóm 9 Shop</p>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/lebaothanh.nguyen.73/" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.youtube.com/playlist?list=PLZvkH_Jjc9AJpDuCdNIeXrrA2fuAZgqgw" target="_blank"><i class="fa fa-youtube"></i></a>
+                        <a href="https://drive.google.com/drive/u/1/folders/1bfDz0MmiJF080q95QoQJARy98w8CEivt?fbclid=IwAR1ceZmNm3rtMkuiGxGgA1nduQKvVD0sDtIiAYFiU_bECmmnPhfRRk_Mo_I" target="_blank"><i class="fa fa-google"></i></a>
                         <a href="https://github.com/Bao-Thanh/LTW" target="_blank"><i class="fa fa-github"></i></a>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-3 col-sm-6">
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">Thông tin của bạn </h2>
                     <ul>
-                        <li><a href="myaccount.jsp"><i class="fa fa-user"></i>Tài khoản</a></li>
+                        <li><a href="MyaccountServlet"><i class="fa fa-user"></i>Tài khoản</a></li>
                         <li><a href="baotri.jsp"><i class="fa fa-heart"></i> Yêu thích</a></li>
                         <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng</a></li>
                         <li><a href="baotri.jsp"><i class="fa fa-user"></i> Lịch sử</a></li>

@@ -1,4 +1,6 @@
 <<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -34,7 +36,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="product-bit-title text-center">
-                                <h2>Shopping Cart</h2>
+                                <h2>Thanh toán</h2>
                             </div>
                         </div>
                     </div>
@@ -57,52 +59,16 @@
 
                             <div class="single-sidebar">
                                 <h2 class="sidebar-title">Products</h2>
-                                <div class="thubmnail-recent">
-                                    <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                                    <h2><a href="single-product.jsp">Sony Smart TV - 2015</a></h2>
-                                    <div class="product-sidebar-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div>                             
-                                </div>
-                                <div class="thubmnail-recent">
-                                    <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                                    <h2><a href="single-product.jsp">Sony Smart TV - 2015</a></h2>
-                                    <div class="product-sidebar-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div>                             
-                                </div>
-                                <div class="thubmnail-recent">
-                                    <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                                    <h2><a href="single-product.jsp">Sony Smart TV - 2015</a></h2>
-                                    <div class="product-sidebar-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div>                             
-                                </div>
-                                <div class="thubmnail-recent">
-                                    <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                                    <h2><a href="single-product.jsp">Sony Smart TV - 2015</a></h2>
-                                    <div class="product-sidebar-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
-                                    </div>                             
-                                </div>
+                                <jsp:include page="left.jsp" flush="true"></jsp:include>                               
                             </div>
 
-                            <div class="single-sidebar">
-                                <h2 class="sidebar-title">Recent Posts</h2>
-                                <ul>
-                                    <li><a href="single-product.jsp">Sony Smart TV - 2015</a></li>
-                                    <li><a href="single-product.jsp">Sony Smart TV - 2015</a></li>
-                                    <li><a href="single-product.jsp">Sony Smart TV - 2015</a></li>
-                                    <li><a href="single-product.jsp">Sony Smart TV - 2015</a></li>
-                                    <li><a href="single-product.jsp">Sony Smart TV - 2015</a></li>
-                                </ul>
-                            </div>
+                            
                         </div>
 
                         <div class="col-md-8">
                             <div class="product-content-right">
                                 <div class="woocommerce">
-                                    <div class="woocommerce-info">Returning customer? <a class="showlogin" data-toggle="collapse" href="#login-form-wrap" aria-expanded="false" aria-controls="login-form-wrap">Click here to login</a>
+<!--                                    <div class="woocommerce-info">Returning customer? <a class="showlogin" data-toggle="collapse" href="#login-form-wrap" aria-expanded="false" aria-controls="login-form-wrap">Click here to login</a>
                                     </div>
 
                                     <form id="login-form-wrap" class="login collapse" method="post">
@@ -132,9 +98,9 @@
                                         </p>
 
                                         <div class="clear"></div>
-                                    </form>
+                                    </form>-->
 
-                                    <div class="woocommerce-info">Have a coupon? <a class="showcoupon" data-toggle="collapse" href="#coupon-collapse-wrap" aria-expanded="false" aria-controls="coupon-collapse-wrap">Click here to enter your code</a>
+<!--                                    <div class="woocommerce-info">Have a coupon? <a class="showcoupon" data-toggle="collapse" href="#coupon-collapse-wrap" aria-expanded="false" aria-controls="coupon-collapse-wrap">Click here to enter your code</a>
                                     </div>
 
                                     <form id="coupon-collapse-wrap" method="post" class="checkout_coupon collapse">
@@ -148,16 +114,16 @@
                                         </p>
 
                                         <div class="clear"></div>
-                                    </form>
+                                    </form>-->
 
-                                    <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+                                    <form enctype="multipart/form-data" action="InsertServlet" class="checkout" method="post" name="checkout">
 
                                         <div id="customer_details" class="col2-set">
                                             <div class="col-1">
                                                 <div class="woocommerce-billing-fields">
-                                                    <h3>Billing Details</h3>
+                                                    <h3>Điền thông tin</h3>
                                                     <p id="billing_country_field" class="form-row form-row-wide address-field update_totals_on_change validate-required woocommerce-validated">
-                                                        <label class="" for="billing_country">Country <abbr title="required" class="required">*</abbr>
+<!--                                                        <label class="" for="billing_country">Country <abbr title="required" class="required">*</abbr>
                                                         </label>
                                                         <select class="country_to_state country_select" id="billing_country" name="billing_country">
                                                             <option value="">Select a country…</option>
@@ -406,15 +372,15 @@
                                                             <option value="ZM">Zambia</option>
                                                             <option value="ZW">Zimbabwe</option>
                                                         </select>
-                                                    </p>
+                                                    </p>-->
 
                                                     <p id="billing_first_name_field" class="form-row form-row-first validate-required">
-                                                        <label class="" for="billing_first_name">First Name <abbr title="required" class="required">*</abbr>
+                                                        <label class="" for="billing_first_name">Họ và Tên <abbr title="required" class="required">*</abbr>
                                                         </label>
-                                                        <input type="text" value="" placeholder="" id="billing_first_name" name="billing_first_name" class="input-text ">
+                                                        <input type="text" value="${kh.tenKH}" placeholder="" id="billing_first_name" name="txtName" class="input-text ">
                                                     </p>
 
-                                                    <p id="billing_last_name_field" class="form-row form-row-last validate-required">
+<!--                                                    <p id="billing_last_name_field" class="form-row form-row-last validate-required">
                                                         <label class="" for="billing_last_name">Last Name <abbr title="required" class="required">*</abbr>
                                                         </label>
                                                         <input type="text" value="" placeholder="" id="billing_last_name" name="billing_last_name" class="input-text ">
@@ -424,19 +390,16 @@
                                                     <p id="billing_company_field" class="form-row form-row-wide">
                                                         <label class="" for="billing_company">Company Name</label>
                                                         <input type="text" value="" placeholder="" id="billing_company" name="billing_company" class="input-text ">
-                                                    </p>
+                                                    </p>-->
 
                                                     <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
-                                                        <label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr>
+                                                        <label class="" for="billing_address_1">Địa chỉ <abbr title="required" class="required">*</abbr>
                                                         </label>
-                                                        <input type="text" value="" placeholder="Street address" id="billing_address_1" name="billing_address_1" class="input-text ">
+                                                        <input type="text" value="${kh.diaChi}" placeholder="" id="billing_address_1" name="txtDiachi" class="input-text ">
                                                     </p>
 
-                                                    <p id="billing_address_2_field" class="form-row form-row-wide address-field">
-                                                        <input type="text" value="" placeholder="Apartment, suite, unit etc. (optional)" id="billing_address_2" name="billing_address_2" class="input-text ">
-                                                    </p>
-
-                                                    <p id="billing_city_field" class="form-row form-row-wide address-field validate-required" data-o_class="form-row form-row-wide address-field validate-required">
+                                                    
+<!--                                                    <p id="billing_city_field" class="form-row form-row-wide address-field validate-required" data-o_class="form-row form-row-wide address-field validate-required">
                                                         <label class="" for="billing_city">Town / City <abbr title="required" class="required">*</abbr>
                                                         </label>
                                                         <input type="text" value="" placeholder="Town / City" id="billing_city" name="billing_city" class="input-text ">
@@ -452,23 +415,23 @@
                                                         <input type="text" value="" placeholder="Postcode / Zip" id="billing_postcode" name="billing_postcode" class="input-text ">
                                                     </p>
 
-                                                    <div class="clear"></div>
+                                                    <div class="clear"></div>-->
 
                                                     <p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
-                                                        <label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr>
+                                                        <label class="" for="billing_email">Email <abbr title="required" class="required">*</abbr>
                                                         </label>
-                                                        <input type="text" value="" placeholder="" id="billing_email" name="billing_email" class="input-text ">
+                                                        <input type="text" value="${kh.email}" placeholder="" id="billing_email" name="txtEmail" class="input-text ">
                                                     </p>
 
                                                     <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
-                                                        <label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr>
+                                                        <label class="" for="billing_phone">SĐT <abbr title="required" class="required">*</abbr>
                                                         </label>
-                                                        <input type="text" value="" placeholder="" id="billing_phone" name="billing_phone" class="input-text ">
+                                                        <input type="text" value="${kh.sdt}" placeholder="" id="billing_phone" name="txtPhone" class="input-text ">
                                                     </p>
                                                     <div class="clear"></div>
 
 
-                                                    <div class="create-account">
+<!--                                                    <div class="create-account">
                                                         <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
                                                         <p id="account_password_field" class="form-row validate-required">
                                                             <label class="" for="account_password">Account password <abbr title="required" class="required">*</abbr>
@@ -476,12 +439,12 @@
                                                             <input type="password" value="" placeholder="Password" id="account_password" name="account_password" class="input-text">
                                                         </p>
                                                         <div class="clear"></div>
-                                                    </div>
+                                                    </div>-->
 
                                                 </div>
                                             </div>
 
-                                            <div class="col-2">
+<!--                                            <div class="col-2">
                                                 <div class="woocommerce-shipping-fields">
                                                     <h3 id="ship-to-different-address">
                                                         <label class="checkbox" for="ship-to-different-address-checkbox">Ship to a different address?</label>
@@ -801,7 +764,7 @@
 
                                                 </div>
 
-                                            </div>
+                                            </div>-->
 
                                         </div>
 
@@ -809,23 +772,35 @@
 
                                         <div id="order_review" style="position: relative;">
                                             <table class="shop_table">
+                                            
                                                 <thead>
                                                     <tr>
-                                                        <th class="product-name">Product</th>
-                                                        <th class="product-total">Total</th>
+                                                        <th class="product-name">Sản Phẩm</th>
+                                                        <th class="product-mount">Số Lượng</th>
+                                                        <th class="product-total">Giá</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                <c:set var="total" value="${0}"/>
+                                                <c:forEach items="${update}" var="sp">
                                                     <tr class="cart_item">
                                                         <td class="product-name">
-                                                            Ship Your Idea <strong class="product-quantity">× 1</strong> </td>
+                                                            <a href="singleproduct?maSP=${sp.sanpham.maSP}">${sp.sanpham.tenSP}</a>  
+                                                        </td>
+                                                        <td class="product-mount">
+                                                            <span class="amount" >${sp.quantity}</span> 
+                                                        </td>
                                                         <td class="product-total">
-                                                            <span class="amount">£15.00</span> </td>
+                                                            <span class="amount" >$${sp.total}</span> 
+                                                            <c:set var="total" value="${total + sp.total}"/>
+                                                        </td>
                                                     </tr>
+                                                </c:forEach>    
                                                 </tbody>
+                                                
                                                 <tfoot>
 
-                                                    <tr class="cart-subtotal">
+<!--                                                    <tr class="cart-subtotal">
                                                         <th>Cart Subtotal</th>
                                                         <td><span class="amount">£15.00</span>
                                                         </td>
@@ -838,28 +813,30 @@
                                                             Free Shipping
                                                             <input type="hidden" class="shipping_method" value="free_shipping" id="shipping_method_0" data-index="0" name="shipping_method[0]">
                                                         </td>
-                                                    </tr>
-
-
+                                                    </tr>-->                                                                                                                                
                                                     <tr class="order-total">
                                                         <th>Order Total</th>
-                                                        <td><strong><span class="amount">£15.00</span></strong> </td>
-                                                    </tr>
-
+                                                        <td>
+                                                            
+                                                            <strong><span class="amount">$${total}</span></strong>                                                                                                                         
+                                                        </td>                                                      
+                                                    </tr>                                               
                                                 </tfoot>
                                             </table>
+                                            
 
-
-                                            <div id="payment">
+                                            <div id="payment">                                               
                                                 <ul class="payment_methods methods">
+                                                    <c:forEach items="${vclist}" var="c">
                                                     <li class="payment_method_bacs">
                                                         <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio" id="payment_method_bacs">
-                                                        <label for="payment_method_bacs">Direct Bank Transfer </label>
-                                                        <div class="payment_box payment_method_bacs">
-                                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                                        </div>
+                                                        <label for="payment_method_bacs">${c.tenVC}: FreeShip </label>
+<!--                                                        <div class="payment_box payment_method_bacs">
+                                                            <p>Nhận hàng rồi mới thanh toán.</p>
+                                                        </div>-->
                                                     </li>
-                                                    <li class="payment_method_cheque">
+                                                    </c:forEach>
+<!--                                                    <li class="payment_method_cheque">
                                                         <input type="radio" data-order_button_text="" value="cheque" name="payment_method" class="input-radio" id="payment_method_cheque">
                                                         <label for="payment_method_cheque">Cheque Payment </label>
                                                         <div style="display:none;" class="payment_box payment_method_cheque">
@@ -868,23 +845,24 @@
                                                     </li>
                                                     <li class="payment_method_paypal">
                                                         <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal" name="payment_method" class="input-radio" id="payment_method_paypal">
-                                                        <label for="payment_method_paypal">PayPal <img alt="PayPal Acceptance Mark" src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"><a title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup', 'WIPaypal', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What is PayPal?</a>
+                                                        <label for="payment_method_paypal">Thanh toán Online <img alt="PayPal Acceptance Mark" src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"><a title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup', 'WIPaypal', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup"></a>
                                                         </label>
                                                         <div style="display:none;" class="payment_box payment_method_paypal">
                                                             <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
                                                         </div>
-                                                    </li>
+                                                    </li>-->
                                                 </ul>
 
-                                                <div class="form-row place-order">
-
+<!--                                                <div class="form-row place-order">
                                                     <input type="submit" data-value="Place order" value="Place order" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
-
-
+                                                </div>-->
+                                                <div class="actions" colspan="6" value="add">
+                                                    <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" 
+                                                   href="thank.jsp">Đặt hàng</a>
                                                 </div>
 
                                                 <div class="clear"></div>
-
+                                            
                                             </div>
                                         </div>
                                     </form>

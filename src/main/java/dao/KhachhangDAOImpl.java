@@ -56,12 +56,22 @@ public class KhachhangDAOImpl implements KhachhangDAO {
     }
 
     @Override
-    public void updateKH(Khachhang u) {
+    public void updateKH(int maKH, String tenKH, String tenTK, String matKhau,
+            String diaChi, String sdt, String email) {
+        Khachhang up_kh = new Khachhang();
+        up_kh.setMaKH(maKH);
+        up_kh.setTenKH(tenKH);
+        up_kh.setTenTK(tenTK);
+        up_kh.setMatKhau(matKhau);
+        up_kh.setDiaChi(diaChi);
+        up_kh.setSdt(sdt);
+        up_kh.setEmail(email);
+
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
-            em.merge(u);
+            em.merge(up_kh);
             trans.commit();
         } catch (Exception e) {
             System.out.println(e);
@@ -106,10 +116,4 @@ public class KhachhangDAOImpl implements KhachhangDAO {
         return kh;
     }
 
-    
-    public static void main(String[] args) {
-        KhachhangDAOImpl dao = new KhachhangDAOImpl();
-        List<Khachhang> sp = dao.getList();
-        System.out.println(sp);
-    }
 }

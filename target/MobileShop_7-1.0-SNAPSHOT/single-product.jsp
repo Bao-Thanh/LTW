@@ -65,23 +65,16 @@
 
                         <div class="single-sidebar">
                             <h2 class="sidebar-title">Products</h2>
-                            <c:forEach items="${splist}" var="o">
-                                <div class="thubmnail-recent">
-                                    <img src="${o.anh}" class="recent-thumb" alt="">
-                                    <h2><a href="singleproduct?maSP=${o.maSP}">${o.tenSP}</a></h2>
-                                    <div class="product-sidebar-price">
-                                        <ins>$${o.gia}</ins> <del></del>
-                                    </div>                             
-                                </div> 
-                            </c:forEach>
+                            <jsp:include page="left.jsp" flush="true"></jsp:include>
+
                         </div>
 
-                        <div class="single-sidebar">
+<!--                        <div class="single-sidebar">
                             <h2 class="sidebar-title">Recent Posts</h2>
                             <ul>                               
                                 <li><a href="">Sony Smart TV - 2015</a></li>
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
 
                     <div class="col-md-8">

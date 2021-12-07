@@ -16,16 +16,14 @@
             if (request.getAttribute("err") != null) {
                 err = (String) request.getAttribute("err");
             }
-            String username = request.getParameter("username");
-            KhachhangDAOImpl khDAO = new KhachhangDAOImpl();
-            Khachhang khachhang = khDAO.getKH(username);
         %>
- 
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <form action="KhachhangServlet" method="POST">                      
+                        <h3 class="section-title">THÔNG TIN CÁ NHÂN</h3>
+                        <form action="KhachhangServlet" method="post">                      
                             <li style="color: red"><%=err%></li>
                             <label class="" for="tenKH">Tên của bạn: <abbr title="required" class="required">*</abbr>
                             </label>
@@ -61,10 +59,7 @@
                                 </label>
                                 <input type="email" value="${kh.email}" id="email" name="email" class="form-control">
                             </div>
-
-                            <div class="form-group">
-                                <input type="hidden" value="${kh.maKH}" id="tenTK" name="maKHTK" class="form-control">
-                            </div>
+                            <input type="hidden" value="${kh.maKH}" id="maKH" name="maKH" class="form-control">
                             <button type="submit" class="btn btn-primary">Lưu lại</button>      
                         </form>                     
                     </div>

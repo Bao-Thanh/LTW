@@ -19,7 +19,7 @@ import model.Sanpham;
 
 /**
  *
- * @author admin
+ * @author BaoThanh
  */
 public class CategoryServlet extends HttpServlet {
 
@@ -42,7 +42,7 @@ public class CategoryServlet extends HttpServlet {
         List<Sanpham> nsp = dao.getThuongHieu(tenNSP);
 
         request.setAttribute("listnsph", nsp);
-
+        request.setAttribute("tenNSP", tenNSP);
         request.getRequestDispatcher("category.jsp").forward(request, response);
     }
 

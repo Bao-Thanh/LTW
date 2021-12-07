@@ -11,9 +11,11 @@ public interface KhachhangDAO {
 
     public Khachhang login(String username, String password);
 
-    public void updateKH(Khachhang u);
+    public void updateKH(int maKH, String tenKH, String tenTK, String matKhau,
+            String diaChi, String sdt, String email);
 
     public Khachhang getKH(String username);
 
-     public List<Khachhang> getList();
+    public List<Khachhang> getList();
+
 }

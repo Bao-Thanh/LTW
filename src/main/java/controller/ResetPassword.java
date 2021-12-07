@@ -72,7 +72,7 @@ public class ResetPassword extends HttpServlet {
 
 				Khachhang u = khDAO.getKH(username);
 				Khachhang new_kh = new Khachhang(u.getTenKH(), username, "passwordreset", u.getDiaChi(),u.getSdt(), u.getEmail());
-				khDAO.updateKH(new_kh);
+//				khDAO.updateKH(new_kh);
 				url = "/login.jsp";
 				String mess = "Kiểm tra email để nhận mật khẩu mới!";
 				request.setAttribute("mess", mess);

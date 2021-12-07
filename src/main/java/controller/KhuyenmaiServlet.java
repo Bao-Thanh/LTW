@@ -6,7 +6,6 @@
 package controller;
 
 import dao.KhuyenmaiDAOImpl;
-import dao.SanphamDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Khuyenmai;
-import model.Sanpham;
 
 /**
  *
@@ -36,20 +34,15 @@ public class KhuyenmaiServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-
-            String id = request.getParameter("coupon");
-            
-            KhuyenmaiDAOImpl dao = new KhuyenmaiDAOImpl();
-            Khuyenmai km = dao.getGiatriKhuyenmai(Integer.parseInt(id));
-
-            SanphamDAOImpl daosp= new SanphamDAOImpl();
-            List<Sanpham> listsp  = daosp.getSanphamByPrice();
-            
-            request.setAttribute("listsanphamcart", listsp);
-            request.setAttribute("khuyenmai", km);
-            request.getRequestDispatcher("cart.jsp").forward(request, response);
-        }
+        String id = request.getParameter("coupon");      
+        
+        
+        KhuyenmaiDAOImpl dao  = new KhuyenmaiDAOImpl();
+        Khuyenmai km = dao.getGiatriKhuyenmai(Integer.parseInt(id));
+       
+        
+        request.setAttribute("khuyenmai", km);
+        request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
