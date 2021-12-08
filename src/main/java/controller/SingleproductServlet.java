@@ -58,7 +58,7 @@ public class SingleproductServlet extends HttpServlet {
         request.setAttribute("singleSP", sanpham);
         request.setAttribute("splist", listsp);
         request.setAttribute("th", listth);
-        request.setAttribute("listsanphamcart", listspprice);
+        request.setAttribute("SPprice", listspprice);
         
         
         request.getRequestDispatcher("single-product.jsp").forward(request, response);

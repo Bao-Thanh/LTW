@@ -44,7 +44,7 @@
                     <ul class="" id="bxslider-home4">
                     <c:forEach items="${quangcao}" var="qc" >
                         <li>
-                            <a href="CategoryServlet?tenNSP=${qc.tenQC}"><img src="${qc.anh}" alt=""></a> 
+                            <a href="ShopServlet"><img src="${qc.anh}" alt=""></a> 
                             <div class="caption-group">
                                 <%-- <h2 class="caption title">
                                     <span class="primary"> <strong>${qc.tenQC}</strong></span>

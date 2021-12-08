@@ -17,7 +17,6 @@ model\Uathich.class
 model\History.class
 model\Nhomsanpham.class
 model\Thanhtoan.class
-controller\MyaccountServlet.class
 model\Sequence.class
 model\Khachhang_.class
 dao\DanhgiaDAO.class
@@ -31,7 +30,6 @@ model\Cauhinh.class
 controller\KhachhangADServlet.class
 controller\SearchServlet.class
 model\Danhgia.class
-controller\CartHeader.class
 controller\PhantrangServlet.class
 model\Donhang.class
 model\Nhomsanpham_.class
@@ -58,12 +56,10 @@ controller\LoginadminServlet.class
 controller\VCH_THADServlet.class
 dao\DonhangDAOImpl.class
 dao\QuangcaoDAOImpl.class
-controller\SearchCheckout.class
 dao\KhuyenmaiDAO.class
 dao\VanchuyenDAOImpl.class
 controller\LoginServlet.class
 model\Quantri_.class
-controller\InsertServlet.class
 controller\SanphamServlet.class
 model\Thanhtoan_.class
 dao\SanphamDAO.class
@@ -82,7 +78,6 @@ dao\ThanhtoanDAOImpl.class
 dao\QuantriDAO.class
 dao\VanchuyenDAO.class
 controller\KhachhangServlet.class
-controller\CheckServlet.class
 model\Vanchuyen.class
 dao\KhachhangDAO.class
 dao\UathichDAOImpl.class

@@ -117,7 +117,7 @@
                                                 
 
                                         <div class="product-inner-category">
-                                             <p>Category: <a href="CategoryServlet?tenNSP=${singleSP.thuongHieu}">${singleSP.thuongHieu}</a>. </p>
+                                            <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
                                         </div> 
 
                                         <div role="tabpanel">
@@ -174,7 +174,7 @@
                                             <div class="product-f-image">
                                                 <img src="${th.anh}" alt="">
                                                 <div class="product-hover">
-                                                    <a href="cart?maSP=${th.maSP}&command=setCart&soluong=1" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                                    <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                                     <a href="singleproduct?maSP=${th.maSP}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                                 </div>
                                             </div>

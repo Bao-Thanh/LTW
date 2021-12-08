@@ -86,14 +86,6 @@
         <servlet-name>KhachhangServlet</servlet-name>
         <servlet-class>controller.KhachhangServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>CartHeader</servlet-name>
-        <servlet-class>controller.CartHeader</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SearchCheckout</servlet-name>
-        <servlet-class>controller.SearchCheckout</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>taikhoan</servlet-name>
         <url-pattern>/taikhoan</url-pattern>
@@ -191,14 +183,6 @@
     <servlet-mapping>
         <servlet-name>KhachhangServlet</servlet-name>
         <url-pattern>/KhachhangServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CartHeader</servlet-name>
-        <url-pattern>/cartheader</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SearchCheckout</servlet-name>
-        <url-pattern>/SearchCheckout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

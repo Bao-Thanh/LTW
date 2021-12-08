@@ -39,7 +39,7 @@ public class SearchServlet extends HttpServlet {
         SanphamDAO dao = new SanphamDAOImpl();
         List<Sanpham> list = dao.searchByName(txtSearch);
 
-        request.setAttribute("listsanphamcart", list);
+        request.setAttribute("splist", list);
         request.setAttribute("txtS", txtSearch);
 
         request.getRequestDispatcher("single-product.jsp").forward(request, response);
