@@ -12,7 +12,7 @@ import dao.KhachhangDAOImpl;
 import dao.ThanhtoanDAOImpl;
 import dao.VanchuyenDAOImpl;
 import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import model.Donhang;
@@ -26,6 +26,9 @@ import model.Vanchuyen;
  */
 public class InsertServlet extends HttpServlet {
 
+    private static final long serialVersionUID = 1L;
+    private DonhangDAOImpl daodh = new DonhangDAOImpl();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,7 +38,7 @@ public class InsertServlet extends HttpServlet {
         String diaChi = request.getParameter("txtDiachi");
         String email = request.getParameter("txtEmail");
         String sdt = request.getParameter("txtPhone");
-        Date ngayMua = new Date();
+        String ngayMua = "12/8/2021";
         String tongTien = request.getParameter("tongTien");
         String maVC = request.getParameter("vanchuyen");
         String maTT = request.getParameter("thanhtoan");
@@ -45,15 +48,22 @@ public class InsertServlet extends HttpServlet {
 
         ThanhtoanDAOImpl thdao = new ThanhtoanDAOImpl();
         Thanhtoan thanhtoan = thdao.getThanhbyID(Integer.parseInt(maTT));
+        
+//        KhachhangDAOImpl khdao = new KhachhangDAOImpl();
 
-        KhachhangDAOImpl khdao = new KhachhangDAOImpl();
-
-        Khachhang khachhang = khdao.getKH(tenKH);
-
-        DonhangDAOImpl daodh = new DonhangDAOImpl();
-        daodh.insertDH(tenKH, email, diaChi, sdt, Double.parseDouble(tongTien),
-                ngayMua, khachhang, vanchuyen, thanhtoan);
-        response.sendRedirect("SanphamServlet");
+//        Khachhang khachhang = khdao.getKH(tenKH);
+        String url = "/InsertServlet";
+        try {
+            DonhangDAOImpl daodh = new DonhangDAOImpl();
+             Donhang u = new  Donhang(tenKH, email, diaChi, sdt, Double.parseDouble(tongTien), ngayMua,
+                    vanchuyen, thanhtoan); 
+            daodh.insertDH(u);
+            url = "/InsertServlet";
+            RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher(url);
+            rd.forward(request, response);
+        } catch (IOException | ServletException e) {
+            response.sendRedirect("SanphamServlet");
+        }
     }
-
 }

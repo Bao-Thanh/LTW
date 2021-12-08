@@ -11,8 +11,6 @@ public interface DonhangDAO {
     
      public List<Donhang> getList();
      
-     public void insertDH(String tenKH, String email, String diaChi, String sdt, 
-             double tongTien, Date ngayMua, Khachhang khachhang, 
-             Vanchuyen vanchuyen, Thanhtoan thanhtoan);
+     public void insertDH(Donhang u);
     
 }

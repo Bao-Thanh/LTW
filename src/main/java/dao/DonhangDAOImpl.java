@@ -25,20 +25,8 @@ public class DonhangDAOImpl implements DonhangDAO {
     }
 
     @Override
-    public void insertDH(String tenKH, String email, String diaChi, String sdt, double tongTien,
-            Date ngayMua, Khachhang maKH, Vanchuyen maVC, Thanhtoan maTT) {
-        Donhang u = new Donhang();
-        
-        u.setTenKH(tenKH);
-        u.setEmail(email);
-        u.setDiaChi(diaChi);
-        u.setSdt(sdt);
-        u.setTongTien(tongTien);
-        u.setNgayMua(ngayMua);
-        u.setMaKH(maKH);
-        u.setMaVC(maVC);
-        u.setMaTT(maTT);
-        
+    public void insertDH(Donhang u) {
+
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();

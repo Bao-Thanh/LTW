@@ -116,7 +116,7 @@
                                                                             <div class="clear"></div>
                                                                         </form>-->
 
-                                    <form enctype="multipart/form-data" action="InsertServlet" class="checkout" method="post" name="checkout">
+                                    <form action="InsertServlet" class="checkout" method="post" name="checkout">
 
                                         <div id="customer_details" class="col2-set">
                                             <div class="col-1">

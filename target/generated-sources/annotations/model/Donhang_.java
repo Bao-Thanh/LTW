@@ -20,9 +20,9 @@ public class Donhang_ {
     public static volatile SingularAttribute<Donhang, Vanchuyen> maVC;
     public static volatile SingularAttribute<Donhang, Boolean> trangThai;
     public static volatile CollectionAttribute<Donhang, Chitietdonhang> chitietdonhangCollection;
-    public static volatile SingularAttribute<Donhang, Float> tongTien;
+    public static volatile SingularAttribute<Donhang, Double> tongTien;
     public static volatile SingularAttribute<Donhang, Thanhtoan> maTT;
-    public static volatile SingularAttribute<Donhang, Date> ngayMua;
+    public static volatile SingularAttribute<Donhang, String> ngayMua;
     public static volatile SingularAttribute<Donhang, String> tenKH;
     public static volatile SingularAttribute<Donhang, Integer> maDH;
     public static volatile SingularAttribute<Donhang, String> email;

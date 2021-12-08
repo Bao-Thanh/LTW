@@ -62,9 +62,9 @@ public class Donhang implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "TongTien")
     private double tongTien;
+    @Size(max = 100)
     @Column(name = "NgayMua")
-    @Temporal(TemporalType.DATE)
-    private Date ngayMua;
+    private String ngayMua;
     @Column(name = "TrangThai")
     private Boolean trangThai;
     @JoinColumn(name = "MaKH", referencedColumnName = "MaKH")
@@ -83,14 +83,13 @@ public class Donhang implements Serializable {
     }
 
     public Donhang(String tenKH, String email, String diaChi, String sdt, double tongTien,
-            Date ngayMua, Khachhang maKH, Vanchuyen maVC, Thanhtoan maTT) {
+            String ngayMua, Vanchuyen maVC, Thanhtoan maTT) {
         this.tenKH = tenKH;
         this.email = email;
         this.diaChi = diaChi;
         this.sdt = sdt;
         this.tongTien = tongTien;
         this.ngayMua = ngayMua;
-        this.maKH = maKH;
         this.maVC = maVC;
         this.maTT = maTT;
     }
@@ -143,11 +142,11 @@ public class Donhang implements Serializable {
         this.tongTien = tongTien;
     }
 
-    public Date getNgayMua() {
+    public String getNgayMua() {
         return ngayMua;
     }
 
-    public void setNgayMua(Date ngayMua) {
+    public void setNgayMua(String ngayMua) {
         this.ngayMua = ngayMua;
     }
 
