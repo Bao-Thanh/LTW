@@ -24,6 +24,7 @@
                         <li><a href="KhachhangADServlet">Quản lý khách hàng</a></li>
                         <li><a href="VCH_THADServlet">Quản lý vận chuyển & thanh toán</a></li>
                         <li><a href="DH_DG_UTADServlet">Quản lý đơn hàng , đánh giá & ưa thích</a></li>
+                        <li><a href="SanphamServlet" target="_blank">Quản lý shop</a></li>
                     </ul>
                 </li>
                 <li>

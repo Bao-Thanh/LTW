@@ -48,6 +48,12 @@
                 <p>Quản lý đơn hàng , đánh giá & ưa thích</p>
             </a>
         </li>
+        <li>
+            <a href="SanphamServlet" target="_blank">
+                <i class="pe-7s-user"></i>
+                <p>Quản lý shop</p>
+            </a>
+        </li>
     </ul>
 </div>
 

@@ -98,7 +98,7 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="header">
-                                            <h4 class="title">Danh sách các sản phẩm khách hàng ye6u thích</h4>
+                                            <h4 class="title">Danh sách các sản phẩm khách hàng yêu thích</h4>
                                         </div>
                                         <div class="content">  
                                             <table class="table table-bordered">
