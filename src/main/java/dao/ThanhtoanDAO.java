@@ -11,5 +11,6 @@ import model.Thanhtoan;
 public interface ThanhtoanDAO {
 
     public List<Thanhtoan> getList();
-
+    
+     public Thanhtoan getThanhbyID(int id);
 }

@@ -40,7 +40,7 @@ public class SearchCartServlet extends HttpServlet {
         List<Sanpham> list = dao.searchByName(txtSearch);
         
               
-        request.setAttribute("listspcart", list);
+        request.setAttribute("listsanphamcart", list);
         request.setAttribute("txtS", txtSearch);      
         request.getRequestDispatcher("cart.jsp").forward(request, response);     
     }

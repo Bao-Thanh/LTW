@@ -7,6 +7,7 @@ package controller;
 
 import dao.KhachhangDAOImpl;
 import dao.SanphamDAOImpl;
+import dao.ThanhtoanDAOImpl;
 import dao.VanchuyenDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,10 +20,12 @@ import javax.servlet.http.HttpServletResponse;
 import model.Khachhang;
 import model.Sanpham;
 import model.Vanchuyen;
+import model.Thanhtoan;
 
 /**
  *
  * @author hle38
+ * @contributor BaoThanh
  */
 public class CheckServlet extends HttpServlet {
 
@@ -55,11 +58,15 @@ public class CheckServlet extends HttpServlet {
         VanchuyenDAOImpl vc = new VanchuyenDAOImpl();
         List<Vanchuyen> listvc = vc.getList();
 
+        ThanhtoanDAOImpl tt = new ThanhtoanDAOImpl();
+        List<Thanhtoan> listtt = tt.getList();
+
         KhachhangDAOImpl khdao = new KhachhangDAOImpl();
         Khachhang kh = khdao.getKH(tenKH);
 
         request.setAttribute("splist", listsp);
         request.setAttribute("vclist", listvc);
+        request.setAttribute("ttlist", listtt);
         request.setAttribute("kh", kh);
 
         request.getRequestDispatcher("checkout.jsp").forward(request, response);

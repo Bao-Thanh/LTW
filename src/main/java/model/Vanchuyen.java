@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.io.Serializable;
@@ -23,7 +18,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author PhucNguyen
+ * @author BaoThanh
  */
 @Entity
 @Table(name = "vanchuyen")
@@ -42,7 +37,7 @@ public class Vanchuyen implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "MaVC")
-    private Integer maVC;
+    private int maVC;
     @Size(max = 500)
     @Column(name = "TenVC")
     private String tenVC;
@@ -60,15 +55,15 @@ public class Vanchuyen implements Serializable {
     public Vanchuyen() {
     }
 
-    public Vanchuyen(Integer maVC) {
+    public Vanchuyen(int maVC) {
         this.maVC = maVC;
     }
 
-    public Integer getMaVC() {
+    public int getMaVC() {
         return maVC;
     }
 
-    public void setMaVC(Integer maVC) {
+    public void setMaVC(int maVC) {
         this.maVC = maVC;
     }
 
@@ -113,25 +108,25 @@ public class Vanchuyen implements Serializable {
         this.donhangCollection = donhangCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (maVC != null ? maVC.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Vanchuyen)) {
-            return false;
-        }
-        Vanchuyen other = (Vanchuyen) object;
-        if ((this.maVC == null && other.maVC != null) || (this.maVC != null && !this.maVC.equals(other.maVC))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (maVC != null ? maVC.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Vanchuyen)) {
+//            return false;
+//        }
+//        Vanchuyen other = (Vanchuyen) object;
+//        if ((this.maVC == null && other.maVC != null) || (this.maVC != null && !this.maVC.equals(other.maVC))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {

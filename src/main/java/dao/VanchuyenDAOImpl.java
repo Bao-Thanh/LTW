@@ -32,8 +32,6 @@ public class VanchuyenDAOImpl implements VanchuyenDAO {
 
     }
 
-    
-
     @Override
     public Vanchuyen getVanchuyen(int id) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

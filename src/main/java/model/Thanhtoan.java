@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.io.Serializable;
@@ -23,7 +18,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author PhucNguyen
+ * @author BaoThanh
  */
 @Entity
 @Table(name = "thanhtoan")
@@ -41,7 +36,7 @@ public class Thanhtoan implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "MaTT")
-    private Integer maTT;
+    private int maTT;
     @Size(max = 500)
     @Column(name = "TenTT")
     private String tenTT;
@@ -56,15 +51,15 @@ public class Thanhtoan implements Serializable {
     public Thanhtoan() {
     }
 
-    public Thanhtoan(Integer maTT) {
+    public Thanhtoan(int maTT) {
         this.maTT = maTT;
     }
 
-    public Integer getMaTT() {
+    public int getMaTT() {
         return maTT;
     }
 
-    public void setMaTT(Integer maTT) {
+    public void setMaTT(int maTT) {
         this.maTT = maTT;
     }
 
@@ -101,25 +96,25 @@ public class Thanhtoan implements Serializable {
         this.donhangCollection = donhangCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (maTT != null ? maTT.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Thanhtoan)) {
-            return false;
-        }
-        Thanhtoan other = (Thanhtoan) object;
-        if ((this.maTT == null && other.maTT != null) || (this.maTT != null && !this.maTT.equals(other.maTT))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (maTT != null ? maTT.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Thanhtoan)) {
+//            return false;
+//        }
+//        Thanhtoan other = (Thanhtoan) object;
+//        if ((this.maTT == null && other.maTT != null) || (this.maTT != null && !this.maTT.equals(other.maTT))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {

@@ -17,7 +17,7 @@ public class ThanhtoanDAOImpl implements ThanhtoanDAO {
         TypedQuery<Thanhtoan> q = em.createQuery(qString, Thanhtoan.class);
 
         List<Thanhtoan> th = null;
-        
+
         try {
             th = q.getResultList();
 
@@ -30,6 +30,16 @@ public class ThanhtoanDAOImpl implements ThanhtoanDAO {
             em.close();
         }
         return th;
+    }
+
+    @Override
+    public Thanhtoan getThanhbyID(int id) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT s FROM Thanhtoan s where s.maTT = :id";
+        TypedQuery<Thanhtoan> q = em.createQuery(qString, Thanhtoan.class);
+        q.setParameter("id", id);
+        Thanhtoan sp = q.getSingleResult();
+        return sp;
     }
 
 }

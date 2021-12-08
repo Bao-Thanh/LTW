@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.io.Serializable;
@@ -28,7 +23,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author PhucNguyen
+ * @author BaoThanh
  */
 @Entity
 @Table(name = "donhang")
@@ -50,7 +45,7 @@ public class Donhang implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "MaDH")
-    private Integer maDH;
+    private int maDH;
     @Size(max = 500)
     @Column(name = "TenKH")
     private String tenKH;
@@ -66,7 +61,7 @@ public class Donhang implements Serializable {
     private String sdt;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "TongTien")
-    private Float tongTien;
+    private double tongTien;
     @Column(name = "NgayMua")
     @Temporal(TemporalType.DATE)
     private Date ngayMua;
@@ -87,15 +82,24 @@ public class Donhang implements Serializable {
     public Donhang() {
     }
 
-    public Donhang(Integer maDH) {
-        this.maDH = maDH;
+    public Donhang(String tenKH, String email, String diaChi, String sdt, double tongTien,
+            Date ngayMua, Khachhang maKH, Vanchuyen maVC, Thanhtoan maTT) {
+        this.tenKH = tenKH;
+        this.email = email;
+        this.diaChi = diaChi;
+        this.sdt = sdt;
+        this.tongTien = tongTien;
+        this.ngayMua = ngayMua;
+        this.maKH = maKH;
+        this.maVC = maVC;
+        this.maTT = maTT;
     }
 
-    public Integer getMaDH() {
+    public int getMaDH() {
         return maDH;
     }
 
-    public void setMaDH(Integer maDH) {
+    public void setMaDH(int maDH) {
         this.maDH = maDH;
     }
 
@@ -131,11 +135,11 @@ public class Donhang implements Serializable {
         this.sdt = sdt;
     }
 
-    public Float getTongTien() {
+    public double getTongTien() {
         return tongTien;
     }
 
-    public void setTongTien(Float tongTien) {
+    public void setTongTien(double tongTien) {
         this.tongTien = tongTien;
     }
 
@@ -188,29 +192,27 @@ public class Donhang implements Serializable {
         this.chitietdonhangCollection = chitietdonhangCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (maDH != null ? maDH.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Donhang)) {
-            return false;
-        }
-        Donhang other = (Donhang) object;
-        if ((this.maDH == null && other.maDH != null) || (this.maDH != null && !this.maDH.equals(other.maDH))) {
-            return false;
-        }
-        return true;
-    }
-
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (maDH != null ? maDH.hashCode() : 0);
+//        return hash;
+//    }
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Donhang)) {
+//            return false;
+//        }
+//        Donhang other = (Donhang) object;
+//        if ((this.maDH == null && other.maDH != null) || (this.maDH != null && !this.maDH.equals(other.maDH))) {
+//            return false;
+//        }
+//        return true;
+//    }
     @Override
     public String toString() {
         return "model.Donhang[ maDH=" + maDH + " ]";
     }
-    
+
 }
