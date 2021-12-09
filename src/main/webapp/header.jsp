@@ -115,148 +115,19 @@
                     <li><a href="ShopServlet">Shop page</a></li>
                     <li><a href="cartheader">Giỏ hàng</a></li>
                     <li><a href="CheckServlet">Thanh toán</a></li>
-                    <li><a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Category điện thoại</a>
-
-                    </li>
-                    <li><a href="#" data-toggle="modal" data-target="#contact">Liên hệ</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#other">Khác</a></li>
+                        <%
+                            NSP_NCC_DAOImpl dao = new NSP_NCC_DAOImpl();
+                            List<Nhomsanpham> category = dao.getListNSP();
+                            request.setAttribute("category", category);
+                        %>
+                        <c:forEach items="${category}" var="nsp" >
+                        <li><a href="CategoryServlet?tenNSP=${nsp.tenNhomSP}">${nsp.tenNhomSP}</a></li>
+                        </c:forEach>
+                    <li><a href="contact.jsp">Liên hệ</a></li>
                 </ul>
             </div>  
         </div>
     </div>
 </div> <!-- End mainmenu area -->
 
-<!-- Modal -->
-<div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contact" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="contact">Thông tin liên hệ</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Họ và tên</th>
-                            <th scope="col">MSSV</th>
-                            <th scope="col">Trang cá nhân</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Nguyễn Lê Bảo Thanh</td>
-                            <td>
-                                <a href="https://https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=19110019@student.hcmute.edu.vn" target="_blank">19110019</a>
-                            </td>
-                            <td>
-                                <a href="https://https://www.facebook.com/lebaothanh.nguyen.73/" target="_blank">Nguyễn Lê Bảo Thanh </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Nguyễn Hồng Phúc</td>
-                            <td>
-                                <a href="https://mail.google.com/mail/u/0/?fs=1&amp;tf=cm&amp;source=mailto&amp;to=19110267@student.hcmute.edu.vn" target="_blank">19110267</a>
-                            </td>
-                            <td>
-                                <a href="https://www.facebook.com/profile.php?id=100004408368875/" target="_blank">Nguyễn Hồng Phúc </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Lê Minh Hiếu</td>
-                            <td>
-                                <a href="https://mail.google.com/mail/u/0/?fs=1&amp;tf=cm&amp;source=mailto&amp;to=19110203@student.hcmute.edu.vn" target="_blank">19110203</a>
-                            </td>
-                            <td>
-                                <a href="https://www.facebook.com/LeeHieu.13/" target="_blank">Lê Hiếu</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Modal -->
-<div class="modal fade" id="other" tabindex="-1" aria-labelledby="other" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="other">Khác</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Loại tài tài liệu</th>
-                            <th scope="col">Mô tả</th>
-                            <th scope="col">Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Github</td>
-                            <td>Link github đồ án của nhóm</td>
-                            <td>
-                                <a href="https://github.com/Bao-Thanh/LTW" target="_blank">Link</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Google drive</td>
-                            <td>Video báo cáo cả nhóm</td>
-                            <td>
-                                <a href="https://drive.google.com/drive/u/1/folders/1bfDz0MmiJF080q95QoQJARy98w8CEivt?fbclid=IwAR1ceZmNm3rtMkuiGxGgA1nduQKvVD0sDtIiAYFiU_bECmmnPhfRRk_Mo_I" target="_blank">Link</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<%
-    NSP_NCC_DAOImpl dao = new NSP_NCC_DAOImpl();
-    List<Nhomsanpham> category = dao.getListNSP();
-    request.setAttribute("category", category);
-%>
-<div class="collapse" id="collapseExample">
-    <div class="card">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Tên hãng</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${category}" var="nsp" >
-                    <tr>
-                        <th scope="row">${nsp.maNhomSP}</th>
-                        <td><a href="CategoryServlet?tenNSP=${nsp.tenNhomSP}">${nsp.tenNhomSP}</a></td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-    </div>
-</div>
